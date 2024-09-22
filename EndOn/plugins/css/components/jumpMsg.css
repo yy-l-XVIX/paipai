@@ -1,0 +1,189 @@
+/*****     彈跳視窗     *****/
+.jumpMsgBox
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 200;
+	display: none;
+}
+
+.jumpMsgBox.active
+{
+	display: block;
+}
+
+.jumpMsgContainer
+{
+	background: linear-gradient(105deg, #FFE4F0 0%,#EFEEFF 100%);
+	border: 2px solid white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.3);
+	width: 400px;
+	max-height: 600px;
+	position: absolute;
+	z-index: 5;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+}
+
+.jumpMsgInner
+{
+	width: 100%;
+}
+
+.jumpMsgTop
+{
+	background: white;
+	width: 100%;
+	text-align: center;
+	border-radius: 30px 30px 0 0;
+}
+
+.jumpMsgTit
+{
+	color: #686868;
+	width: calc(100% - 20px);
+	padding: 10px;
+	font-size: 18px;
+}
+
+.jumpMsgContent
+{
+	width: calc(100% - 40px);
+	margin: 30px auto 0 auto;
+	max-height: 444px;
+	overflow-y: scroll;
+	word-break: break-all;
+}
+
+.jumpMsgContent::-webkit-scrollbar
+{
+	/* background-color: #333333; */
+	width: 6px;	
+}
+
+.jumpMsgContent::-webkit-scrollbar-thumb
+{
+	background-color: #081836;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);	
+	width: 6px;
+	border-radius: 999rem;	
+}
+
+.jumpMsgContent img
+{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.jumpMsgIcon
+{
+	width: 100%;
+	font-size: 40px;
+	text-align: center;
+}
+
+.jumpMsgContentTxt
+{
+	color: #434343;
+	width: 100%;
+	text-align: center;
+	padding: 55px 0;
+}
+
+.jumpMsgContentArticle
+{
+	color: black;
+	width: 100%;
+	word-break: break-all;
+}
+
+.jumpMsgContentArticle > div:not(:last-child)
+{
+	margin: 0 0 5px 0;
+}
+.jumpMsgBtnBox
+{
+	width: 100%;
+	padding: 15px 20px 30px 20px;
+	border-collapse: separate;
+	border-spacing: 10px 0;
+}
+
+.jumpMsgBtnCell
+{
+	width: 50%;
+	min-width: 50%;
+	max-width: 50%;
+}
+
+.jumpMsgBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+	border-radius: 999rem;
+}
+
+.jumpMsgBtn.cancel
+{
+	background: #CCCCCC;
+}
+
+.jumpMsgBtnTxt
+{
+	color: white;
+	display: block;
+	padding: 10px 0;
+	width: 100%;
+	font-size: 15px;
+}
+
+.jumpMsgBtn.cancel .jumpMsgBtnTxt
+{
+	color: #333333;
+}
+
+.jumpMsgBg
+{
+	background: rgba(0,0,0,0.8);
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+@media screen and (max-width:1179px)
+{
+	.jumpMsgContainer
+	{
+		width: calc(100% - 30px);
+		max-height: 90vh;
+	}
+
+	.jumpMsgContent
+	{
+		max-height: 350px;
+	}
+
+	.jumpMsgContent img
+	{
+		width: 90%;
+	}
+}
+
+@media screen and (max-width:1179px)
+{
+	.jumpMsgContent
+	{
+		max-height: 300px;
+	}
+}

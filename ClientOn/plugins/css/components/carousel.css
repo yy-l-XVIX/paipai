@@ -1,0 +1,56 @@
+/*     輪播     */
+.carouselBox , .carouselContainer , .carouselBg
+{
+	height: 40vw;
+}
+
+.carouselBox
+{
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.carouselBg
+{
+	background-position: center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 100%;
+	position: absolute;
+	-webkit-transition: -webkit-transform 1s ease;
+	transition: transform 1s ease;
+}
+
+.carousel1
+{
+	transform: translate(0,0);
+}
+
+.carousel2
+{
+	transform: translate(100%,0);
+}
+
+.carousel3
+{
+	transform: translate(200%,0);
+}
+
+.carousel4
+{
+	transform: translate(-200%,0);
+}
+
+.carousel5
+{
+	transform: translate(-100%,0);
+}
+
+@media screen and (min-width:1180px)
+{
+	.carouselBox , .carouselContainer , .carouselBg
+	{
+		height: 19vw;
+	}
+}

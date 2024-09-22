@@ -1,0 +1,629 @@
+/*
+	2020/10/21 V01
+*/
+
+/*****     Reset     *****/
+html , body
+{
+   	margin: 0;
+   	min-height: 100vh;
+	width: 100%;	
+}
+
+html
+{
+	overflow-x: hidden;
+}
+
+body
+{
+	position: relative;
+}
+
+html , body , div , span ,
+p , article , section , form ,
+input , select , textarea , button
+{
+	font-family: 微軟正黑體;
+}
+
+a
+{
+    	text-decoration: none;
+}
+
+img
+{
+	width: 100%;
+	display: block;
+}
+
+input , button , select , textarea
+{
+	background: transparent;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+button , input[type="button"]
+{
+	-webkit-appearance: none !important;
+	-moz-appearance:none !important;
+	appearance: none !important;
+}
+
+table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+thead , tbody , tfoot , tr
+{
+	width: 100%;
+}
+
+td
+{
+	vertical-align: middle;
+}
+
+/*****     Class     *****/
+.FontGradient
+{
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.FontOverflowEllipsis
+{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.BG
+{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.Table
+{
+	display: table;
+}
+
+.Table > div
+{
+	display: table-row-group;
+	width: 100%;
+}
+
+.Table > div > div
+{
+	display: table-row;
+	width: 100%;
+}
+
+.Table > div > div > div ,
+.Table > div > div > a
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/*****     Border     *****/
+.BorderTop0
+{
+	border-top: 0 !important;
+}
+
+.BorderRight0
+{
+	border-right: 0 !important;
+}
+
+.BorderBottom0
+{
+	border-bottom: 0 !important;
+}
+
+.BorderLeft0
+{
+	border-left: 0 !important;
+}
+
+/*****     Cursor     *****/
+.cursorPointer
+{
+	cursor: pointer;
+}
+
+@media screen and (max-width:1179px)
+{
+	.cursorPointer
+	{
+		cursor: unset;
+	}
+}
+
+/*****     Display     *****/
+.DisplayNone , .DisplayBlockNone , .DisplayInlineBlockNone ,
+.DisplayTableNone , .DisplayTableHeaderGroupNone , .DisplayTableRowGroupNone ,
+.DisplayTableFooterGroupNone , .DisplayTableRowNone , .DisplayTableCellNone ,
+.DisplayTheadNone , .DisplayTbodyNone , .DisplayTfootNone , .DisplayTrNone ,
+.DisplayThNone , .DisplayTdNone
+{
+	display: none !important;	
+}
+
+.DisplayBlock , .DisplayBlockNone.active
+{
+	display: block !important;	
+}
+
+.DisplayInlineBlock , .DisplayInlineBlockNone.active
+{
+	display: inline-block !important;	
+}
+
+.DisplayTable , .DisplayTableNone.active
+{
+	display: table !important;	
+}
+
+.DisplayTableHeaderGroup , .DisplayThead ,
+.DisplayTableHeaderGroupNone.active , .DisplayTheadNone.active
+{
+	display: table-header-group !important;	
+}
+
+.DisplayTableRowGroup , .DisplayTbody ,
+.DisplayTableRowGroupNone.active , .DisplayTbodyNone.active
+{
+	display: table-row-group !important;	
+}
+
+.DisplayTableFooterGroup , .DisplayFoot ,
+.DisplayTableFooterGroupNone.active , .DisplayTfootNone.active
+{
+	display: table-footer-group !important;	
+}
+
+.DisplayTableRow , .DisplayTr ,
+.DisplayTableRowNone.active , .DisplayTrNone.active
+{
+	display: table-row !important;	
+}
+
+.DisplayTableCell , .DisplayTh , .DisplayTd ,
+.DisplayTableCellNone.active , .DisplayThNone.active , .DisplayTdNone.active
+{
+	display: table-cell !important;	
+}
+
+/*****     Font     *****/
+.FontWeight600
+{
+	font-weight: 600;
+}
+
+/*****     Margin     *****/
+.MarginTop5
+{
+	margin-top: 5px;
+}
+
+.MarginTop10
+{
+	margin-top: 10px;
+}
+
+.MarginTop15
+{
+	margin-top: 15px;
+}
+
+.MarginTop20
+{
+	margin-top: 20px;
+}
+
+.MarginTop25
+{
+	margin-top: 25px;
+}
+
+.MarginTop30
+{
+	margin-top: 30px;
+}
+
+.MarginRight5
+{
+	margin-right: 5px;
+}
+
+.MarginRight10
+{
+	margin-right: 10px;
+}
+
+.MarginRight15
+{
+	margin-right: 15px;
+}
+
+.MarginRight20
+{
+	margin-right: 20px;
+}
+
+.MarginRight25
+{
+	margin-right: 25px;
+}
+
+.MarginRight30
+{
+	margin-right: 30px;
+}
+
+.MarginBottom5
+{
+	margin-bottom: 5px;
+}
+
+.MarginBottom10
+{
+	margin-bottom: 10px;
+}
+
+.MarginBottom15
+{
+	margin-bottom: 15px;
+}
+
+.MarginBottom20
+{
+	margin-bottom: 20px;
+}
+
+.MarginBottom25
+{
+	margin-bottom: 25px;
+}
+
+.MarginBottom30
+{
+	margin-bottom: 30px;
+}
+
+.MarginBottom35
+{
+	margin-bottom: 35px;
+}
+
+.MarginBottom40
+{
+	margin-bottom: 40px;
+}
+
+.MarginBottom45
+{
+	margin-bottom: 45px;
+}
+
+.MarginBottom50
+{
+	margin-bottom: 50px;
+}
+
+.MarginBottom60
+{
+	margin-bottom: 60px;
+}
+
+.MarginBottom70
+{
+	margin-bottom: 70px;
+}
+
+.MarginBottom100
+{
+	margin-bottom: 100px;
+}
+
+.MarginBottom120
+{
+	margin-bottom: 120px;
+}
+
+.MarginTopBottom5
+{
+	margin: 5px 0;
+}
+
+.MarginTopBottom10
+{
+	margin: 10px 0;
+}
+
+.MarginTopBottom15
+{
+	margin: 15px 0;
+}
+
+.MarginTopBottom20
+{
+	margin: 20px 0;
+}
+
+.MarginLeftRight5
+{
+	margin: 0 5px;
+}
+
+.MarginLeftRight10
+{
+	margin: 0 10px;
+}
+
+.MarginLeftRight15
+{
+	margin: 0 15px;
+}
+
+.MarginLeftRight20
+{
+	margin: 0 20px;
+}
+
+.MarginLeftRight25
+{
+	margin: 0 25px;
+}
+
+.MarginLeftRight30
+{
+	margin: 0 30px;
+}
+
+/*****     Overflow     *****/
+.OverflowYHidden
+{
+	overflow-y: hidden;
+}
+
+/*****     Padding     *****/
+.PaddingTop5
+{
+	padding: 5px 0 0 0;
+}
+
+.PaddingTop10
+{
+	padding: 10px 0 0 0;
+}
+
+.PaddingTop15
+{
+	padding: 15px 0 0 0;
+}
+
+.PaddingTop20
+{
+	padding: 20px 0 0 0;
+}
+
+.PaddingTop25
+{
+	padding: 25px 0 0 0;
+}
+
+.PaddingRight5
+{
+	padding: 0 5px 0 0;
+}
+
+.PaddingRight10
+{
+	padding: 0 10px 0 0;
+}
+
+.PaddingRight15
+{
+	padding: 0 15px 0 0;
+}
+
+.PaddingRight20
+{
+	padding: 0 20px 0 0;
+}
+
+.PaddingRight25
+{
+	padding: 0 25px 0 0;
+}
+
+.PaddingBottom5
+{
+	padding: 0 0 5px 0;
+}
+
+.PaddingBottom10
+{
+	padding: 0 0 10px 0;
+}
+
+.PaddingBottom15
+{
+	padding: 0 0 15px 0;
+}
+
+.PaddingBottom20
+{
+	padding: 0 0 20px 0;
+}
+
+.PaddingBottom25
+{
+	padding: 0 0 25px 0;
+}
+
+.PaddingLeft5
+{
+	padding: 0 0 0 5px;
+}
+
+.PaddingLeft10
+{
+	padding: 0 0 0 10px;
+}
+
+.PaddingLeft15
+{
+	padding: 0 0 0 15px;
+}
+
+.PaddingLeft20
+{
+	padding: 0 0 0 20px;
+}
+
+.PaddingLeft25
+{
+	padding: 0 0 0 25px;
+}
+
+.PaddingTopBottom5
+{
+	padding: 5px 0;
+}
+
+.PaddingTopBottom10
+{
+	padding: 10px 0;
+}
+
+.PaddingTopBottom15
+{
+	padding: 15px 0;
+}
+
+.PaddingTopBottom20
+{
+	padding: 20px 0;
+}
+
+.PaddingTopBottom25
+{
+	padding: 25px 0;
+}
+
+.PaddingLeftRight5
+{
+	padding: 0 5px;
+}
+
+.PaddingLeftRight10
+{
+	padding: 0 10px;
+}
+
+.PaddingLeftRight15
+{
+	padding: 0 15px;
+}
+
+.PaddingLeftRight20
+{
+	padding: 0 20px;
+}
+
+.PaddingLeftRight25
+{
+	padding: 0 25px;
+}
+
+/*****     Position     *****/
+.PosTop0 /* position: top; */
+{
+	top: 0 !important;
+}
+
+.PosRight0 /* position: right; */
+{
+	right: 0 !important;
+}
+
+.PosBottom0 /* position: bottom; */
+{
+	bottom: 0 !important;
+}
+
+.PosLeft0 /* position: left; */
+{
+	left: 0 !important;
+}
+
+.PosCenter
+{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+/*****     Text-align     *****/
+.TextAlignLeft
+{
+	text-align: left !important;
+}
+
+.TextAlignCenter
+{
+	text-align: center !important;
+}
+
+.TextAlignRight
+{
+	text-align: right !important;
+}
+
+/*****     Vertical-align     *****/
+.VerticalAlignTop
+{
+	vertical-align: top !important;
+}
+
+.VerticalAlignMiddle
+{
+	vertical-align: middle !important;
+}
+
+.VerticalAlignBottom
+{
+	vertical-align: bottom !important;
+}
+
+/*****     Width     *****/
+.Width100Percent
+{
+	width: 100%;
+}
+
+/*****     Word     *****/
+.WordBreakBreakAll
+{
+	word-break: break-all;
+}
+
+.WordBreakKeepAll
+{
+	word-break: keep-all;
+}

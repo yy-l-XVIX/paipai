@@ -1,0 +1,92 @@
+/*****     登入     *****/
+.loginBtn
+{
+	min-width: 120px;
+}
+
+/*****     共同     *****/
+/*     工作清單     */
+.JobListInfBtnTd
+{
+	width: 90px;
+}
+
+.JobListInfBtn
+{
+	min-width: 80px;
+	padding: 6px 5px;
+	font-size: 14px;
+}
+
+/*     顯示隱藏     */
+.serviceListInviteBtn
+{
+	width: 64px;
+	padding: 5px 3px;
+	font-size: 13px;
+}
+
+/*     Emoji     */
+.EmojiImgBox
+{
+	height: 125px;
+}
+
+.EmojiImg , .EmojiImg img
+{
+	width: 25px;
+}
+
+/*****     首頁     *****/
+/*     上線人數     */
+.indexViewTopic
+{
+	font-size: 14px;
+}
+
+.indexViewKindTit
+{
+	font-size: 13px;
+}
+
+.indexViewKindNum
+{
+	font-size: 12px;
+}
+
+/*****     上班人才     *****/
+.workTable
+{
+	border-spacing: 10px 20px;
+}
+
+/*****     會員中心     *****/
+/*     狀態     */
+.centerBtnBox
+{
+	width: 250px;
+	margin: 0 calc(50% - 125px);
+}
+
+/*****     個人資訊 & 編輯頁面     *****/
+/*     資訊分類     */
+.infProfileMenu
+{
+	min-width: 60px;
+	font-size: 12px;
+	padding: 5px 1px;
+}
+
+/*****     推廣連結     *****/
+.pointPageBtn
+{
+	font-size: 12px;
+	padding: 4px 5px;
+}
+
+/*****     編輯群組     *****/
+.chatGroupUptUserBtn , .chatGroupUptUserBtn img
+{
+	width: 35px;
+	height: 35px;
+}

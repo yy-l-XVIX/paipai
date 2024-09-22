@@ -1,0 +1,252 @@
+/*
+	2020/10/12
+*/
+/*****     頁碼     *****/
+.PageBox
+{
+	width: 100%;
+}
+
+.PageInner
+{
+	width: 100%;
+	text-align: center;
+}
+
+.PageBtnOther , .PageRecord
+{
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.PageBtnOther /* 頁碼以外按鈕 */
+{
+	background: white;
+	color: #434343;
+	border-radius: 5px;
+	padding: 7px 14px;
+}
+
+.PageBtnStyleTxt /* 頁碼以外按鈕-文字顯示 */
+{}
+
+.PageBtnStyleIcon /* 頁碼以外按鈕-icon顯示 */
+{
+	position: relative;
+}
+
+.PageBtnStyleIcon::after
+{
+	width: 0;
+	height: 0;
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border-style: solid;
+	pointer-events: none;
+	z-index: 2;
+}
+
+.prevNextPrevIcon.PageBtnStyleIcon::after
+{
+	border-color: transparent white transparent transparent ;
+	border-width: 5px 10px 5px 0;
+	left: calc(50% - 1px);
+}
+
+.prevNextNextIcon.PageBtnStyleIcon::after
+{
+	border-color: transparent transparent transparent white;
+	border-width: 5px 0 5px 10px;
+	left: calc(50% + 2px);
+}
+
+.PageBtnOther:not(:last-child)
+{
+	margin: 0 8px 0 0;
+}
+
+.PageBtnOther span
+{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+.PageRecord
+{
+	margin: 0 10px 0 0;
+}
+
+/*     Select頁碼     */
+.PageSel , .PageSelDecro
+{
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.PageSel
+{
+	background: white;
+	border: 1px solid #d4d4d4;
+	margin: 0 10px 0 0;
+}
+
+.PageSel Select
+{
+	padding: 3px 20px;
+	font-size: 15px;
+	width: 100%;
+}
+
+.PageSelDecro
+{
+	display: none;
+}
+
+/*     清單式頁碼     */
+.PageListBox , .PageList , .PageListNum
+{
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.PageListBox /* 頁碼Box */
+{
+	color: black;
+	margin: 0 15px 0 6px;
+}
+
+.PageLisNow
+{
+	color: #7455A4;
+	font-weight: 600;
+}
+
+.PageList /* 頁碼 */
+{
+	background: #837569;
+	width: 25px;
+	height: 25px;
+	line-height: 26px;
+	border-radius: 999rem;
+}
+
+.PageList:hover
+{
+	background: rgba(0,0,0,0.5);
+}
+
+.PageList.active
+{
+	background: white;
+}
+
+.PageList:not(:last-child)
+{
+	margin-right: 5px;
+}
+
+.PageListNum
+{
+	color: white;
+	width: 100%;
+	margin: -2px 0 0 0;
+}
+
+.PageList:hover .PageListNum
+{
+	color: white;
+}
+
+.PageList.active .PageListNum
+{
+	color: #333333;
+}
+
+@media screen and (max-width:1179px)
+{
+	.PageRecord
+	{
+		font-size: 12px;
+	}
+
+	/*     Select頁碼     */
+	.PageSel , .PageSelDecro
+	{
+		font-size: 12px;
+	}
+
+	.PageSel Select
+	{
+		font-size: 12px;
+	}
+
+	/*     清單式頁碼     */
+	.PageListBox , .PageList , .PageListNum
+	{
+		font-size: 12px;
+	}
+
+	.PageList
+	{
+		width: 23px;
+		height: 23px;
+		line-height: 24px;
+	}
+
+	.PageList:not(:last-child)
+	{
+		margin-right: 4px;
+	}
+
+	.PageListNum
+	{
+		margin: -3px 0 0 0;
+	}
+
+	.PageBtnOther:not(:last-child)
+	{
+		margin: 0 10px 0 0;
+	}
+
+	.prevNextPrevIcon.PageBtnStyleIcon::after
+	{
+		border-width: 4px 7px 4px 0;
+	}
+
+	.prevNextNextIcon.PageBtnStyleIcon::after
+	{
+		border-width: 4px 0 4px 7px;
+	}
+}
+
+@media screen and (max-width:375px)
+{
+	.PageBtnOther
+	{
+		padding: 7px 12px;
+	}
+}
+
+@media screen and (max-width:360px)
+{
+	.PageBtnOther
+	{
+		padding: 7px 8px;
+	}
+
+	.PageBtnOther:not(:last-child)
+	{
+		margin: 0 5px 0 0;
+	}
+
+	.PageListBox
+	{
+		margin: 0 10px 0 6px;
+	}
+}

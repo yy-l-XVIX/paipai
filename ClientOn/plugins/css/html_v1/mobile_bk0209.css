@@ -1,0 +1,6054 @@
+*
+{
+	font-family: 微軟正黑體;
+}
+
+html , body
+{
+	font-family: 微軟正黑體;
+   	margin: 0;
+   	min-height: 100vh;
+	width: 100%;
+}
+
+html
+{
+    	-webkit-backface-visibility: hidden;
+    	/* -webkit-transform: translate3d(0,0,0); */
+}
+
+body
+{
+	background: #F5F5F5;
+    	-webkit-overflow-scrolling:touch;
+	-ms-overflow-style: none;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	touch-action: manipulation;
+}
+
+body.active
+{
+	overflow: hidden;
+	/* height: 100vh; */
+}
+
+a
+{
+    	text-decoration: none;
+}
+
+img
+{
+	display: block;
+}
+
+input , button , select , textarea
+{
+	background: transparent;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+input[type="submit"] , button , input[type="radio"] , input[type="checkbox"] ,
+select
+{
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+input[type="radio"] , input[type="checkbox"]
+{
+	margin: 0;
+}
+
+textarea
+{
+	padding: 0;
+}
+
+form
+{
+    	margin-block-end: 0; 
+}
+
+/*     Class     */
+.BG
+{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.Table
+{
+	display: table;
+}
+
+.Table > div
+{
+	display: table-row-group;
+	width: 100%;
+}
+
+.Table > div > div
+{
+	display: table-row;
+	width: 100%;
+}
+
+.Table > div > div > div ,
+.Table > div > div > a
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+table
+{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+thead , tbody , tfoot , tr
+{
+	width: 100%;
+}
+
+td
+{
+	vertical-align: middle;
+}
+
+.FontNumber
+{
+	font-family: 'Arial',微軟正黑體;
+}
+
+.Notice
+{
+	color: red;
+	display: none;
+	font-size: 13px;
+	text-align: left;
+}
+
+.Notice.active
+{
+	display: block;
+}
+
+.NoData /* 沒有資料 */
+{
+	text-align: center;
+	font-size: 15px;
+}
+
+.PosLeft /* position: left; */
+{
+	left: 0;
+}
+
+.PosRight /* position: right; */
+{
+	right: 0;
+}
+
+/*****     共同     *****/
+/*     input select textarea     */
+.Ipt , .Sel , .Textarea
+{
+	border: 1px solid #BEBEBE;
+	background: white;
+	border-radius: 10px;
+	width: 100%;
+}
+
+.Ipt input , .Sel select , .Textarea textarea
+{
+	color: #424242;
+	font-size: 13px;
+	display: block;
+	width: 100%;
+	padding: 0 0 0 10px;
+	min-height: 40px;
+}
+
+.Ipt input::placeholder
+{
+	color: #BEBEBE;
+	font-size: 12px;
+}
+
+.Sel
+{
+	position: relative;
+}
+
+.SelDecro
+{
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	pointer-events: none;
+	width: 32px;
+	height: 31px;
+}
+
+.SelDecro::after
+{
+	border-top: 7px solid #BEBEBE;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	width: 0;
+	height: 0;
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	pointer-events: none;
+}
+
+.Textarea textarea
+{
+	color: #434343;
+	width: calc(100%);
+	padding: 10px 0 0 10px;
+	min-height: 80px;
+	resize: vertical;
+}
+
+/*     彈窗     */
+.WindowBox
+{
+	background: rgba(0,0,0,0.8);
+	width: 100%;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 15;
+	display: none;
+}
+
+.WindowBox.active
+{
+	display: block;
+}
+
+.WindowContainer
+{
+	background: #F5F4F1;
+	box-shadow: 0 3px 5px 0 rgba(0,0,0,0.6);
+	position: absolute;
+	width: calc(100% - 40px);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 13;
+}
+
+.WindowTop
+{
+	background: #837569;
+	width: 100%;
+	padding: 8px 20px;
+	border-collapse: separate;
+}
+
+.WindowTit
+{
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.WindowX
+{
+	color: white;
+	text-align: right;
+	font-size: 15px;
+	width: 15px;
+}
+
+.WindowMenu
+{
+	font-size: 12px;
+	font-weight: 600;
+	text-align: center;
+	width: 100%;
+	border: 0;
+}
+
+.WindowMenuBtn
+{
+	background: #D4D0C4;
+	color: #333333;
+	padding: 9px 0;
+	width: 100%;
+	height: 100%;
+}
+
+.WindowMenuBtn.active
+{
+	background: #F5F4F1;
+	color: #A4511C;
+}
+
+.WindowContent
+{
+	width: calc(100% - 40px);
+	padding: 20px 20px 0 20px;
+	margin: 0 0 20px 0;
+	word-break: break-all;
+	max-height: 60vh;
+	min-height: 25vh;
+	overflow-y: scroll;
+	display: none;
+}
+
+.WindowContent.active
+{
+	display: block;
+}
+
+.WindowBtnBox
+{
+	border-collapse: separate;
+	width: 100%;
+	padding: 0 20px;
+	text-align: center;
+}
+
+.WindowBtn
+{
+	font-size: 12px;
+	font-weight: 600;
+	padding: 20px 0;
+}
+
+.WindowBtn div
+{
+	background: linear-gradient(to bottom, #F9D5B4 0%,#F5C79C 5%,#F0B479 10%,#EEAD6C 15%,#E18B49 45%,#DE8946 50%,#C2752D 100%);
+	box-shadow: 0 2px 0 0 #A4511C;
+	color: white;
+	text-shadow: 0 1px 0 #77370E;
+	display: inline-block;
+	min-width: 50px;
+	padding: 1px 0;
+	margin: -4px 0 0 0;
+}
+
+.WindowBg
+{
+	width: 100%;
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 12;
+}
+
+/*     箭頭 ( > )     */
+.AfterArrow
+{
+	border-top: 1px solid #707070;
+	border-right: 1px solid #707070;	
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	transform: rotate(135deg);
+}
+
+.AfterArrow.right
+{
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+/*     大外框     */
+.MainBox
+{
+	width: 100%;
+	min-height: calc(100vh - 162px);
+	padding: 62px 0 100px 0;
+}
+
+.MainBox.noFooter
+{
+	min-height: calc(100vh - 152px);
+	padding: 62px 0 90px 0;
+}
+
+.MainBox.chatFooter
+{
+	min-height: calc(100vh - 122px);
+	padding: 62px 0 60px 0;
+}
+
+.MainBox.active
+{
+	min-height: calc(100vh - 272px);
+	padding: 62px 0 210px 0;
+}
+
+/*     有頁碼之框架     */
+.MainBox.havePage
+{
+	min-height: calc(100vh - 92px);
+	padding: 62px 0 30px 0;
+}
+
+.HavePageBox
+{
+	width: 100%;
+	min-height: calc(100vh - 145px);
+	padding: 0 0 20px 0;
+}
+
+/*     按鈕     */
+.BtnAny , .BtnAny2
+{
+	padding: 5px 0;
+	min-width: 110px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	text-align: center;
+}
+
+.BtnAny
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;
+}
+
+.BtnAny2
+{
+	background: #BF97FF;
+	color: white;
+}
+
+.BtnActBox
+{
+	width: calc(100% - 80px);
+    	margin: 40px 40px 0 40px;
+}
+
+.BtnAct , .BtnAct2
+{
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	padding: 13px 0;
+	width: 100%;
+	border-radius: 999rem;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+	box-sizing: border-box;
+}
+
+.BtnAct
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;	
+}
+
+.BtnAct2
+{
+	border: 1px solid #EA76AC;
+	color: #EA76AC;
+}
+
+.BtnAct.disable , .BtnAny.disable
+{
+	background: #BEBEBE;
+}
+
+/*     會員大頭貼     */
+.selfieBox
+{
+	border: 1px solid #E4E4E4;
+	box-sizing: border-box;
+	border-radius: 5px;
+	display: block;
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+
+.selfieBox.boss
+{
+	border: 1px solid #7455A4;
+}
+
+.selfieBox img
+{
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.selfieStatus
+{
+	background: #EBB851;
+	width: 8px;
+	height: 8px;
+	border-radius: 999rem;
+	position: absolute;
+	z-index: 2;
+	top: -3px;
+	right: -3px;
+}
+
+.selfieStatus.off
+{
+	background: #17BB0C;
+}
+
+.selfieStatus.ing
+{
+	background: #EB4545;
+}
+
+/*     Loading     */
+.LoadingBox
+{
+	width: 100%;
+	text-align: center;
+	padding: 30px 0 50px 0;
+	display: none;
+}
+
+.LoadingBox.active
+{
+	display: block;
+}
+
+.Loading
+{
+	width: 100%;
+	position: relative;
+}
+
+.Loading span
+{
+	position: absolute;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	transform: translateX(-50%);
+	animation: dot-flashing 1s infinite alternate;
+}
+
+.Loading span:first-child
+{
+	left: calc(50% - 24px);
+	animation-delay: 0s;
+}
+
+.Loading span:nth-child(2)
+{
+	left: calc(50% - 8px);
+	animation-delay: 0.5s;
+}
+
+.Loading span:nth-child(3)
+{
+	left: calc(50% + 8px);
+	animation-delay: 1s;
+}
+
+.Loading span:nth-child(4)
+{
+	left: calc(50% + 24px);
+	animation-delay: 1.5s;
+}
+    
+@keyframes dot-flashing
+{
+	0%
+	{
+		background: linear-gradient(135deg, #EA76AC 0%,#7B73F2 100%);
+	}
+
+	50%,
+	100%
+	{
+		background: rgba(0,0,0,0.3);
+	}
+}
+
+/*     工作清單     */
+.JobListBlock
+{
+	background: white;
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	width: calc(100% - 30px);
+	padding: 15px;
+}
+
+.JobListBlock:not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+.JobListInf
+{
+	width: 100%;
+}
+
+.JobListInf > tbody > tr > td:not(:first-child)
+{
+	border-bottom: 1px solid #BEBEBE;
+}
+
+.JobListInfPic
+{
+	padding: 0 10px 0 0;
+}
+
+.JobListInfPic , .JobListInfPic .selfieBox
+{
+	width: 50px;
+	height: 50px;
+}
+
+.JobListInfTit
+{
+	color: #7455A4;
+	font-size: 16px;
+}
+
+.JobListInfLike
+{
+	width: 22px;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.LikeIconImg
+{
+	width: 22px;
+}
+
+.LikeIconImg img
+{
+	width: 100%;
+}
+
+.LikeIcon
+{
+	color: #686868;
+}
+
+.LikeIcon.active
+{
+	color: #EB4545;
+}
+
+.JobListInfBtnTd
+{
+	width: 110px;
+	text-align: right;
+	position: relative;
+}
+
+.JobListInfBtnMoreBox
+{
+	width: 100%;
+	position: relative;
+}
+
+.JobListInfBtnMore
+{
+	color: #7455A4;
+	font-size: 18px;
+	width: 100%;
+}
+
+.JobListInfBtnMoreInner
+{
+	background: white;
+	box-shadow: 0 0 6px 0 rgba(0,0,0,0.3);
+	border-radius: 5px;
+	text-align: center;
+	width: calc(100% - 20px);
+	padding: 0 10px;
+	position: absolute;
+	top: 30px;
+	right: 0;
+}
+
+.JobListInfBtnMoreInnerAhref
+{
+	color: black;
+	font-size: 14px;
+	width: 100%;
+	padding: 10px 0;
+	display: block;
+}
+
+.JobListInfBtnMoreInnerAhref:not(:last-child)
+{
+	border-bottom: 1px solid #BEBEBE;
+}
+
+.JobListInfBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;
+	display: inline-block;
+	min-width: 100px;
+	padding: 6px 5px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.JobListInfBtn.active
+{
+	background: #EB4545;
+}
+
+.JobListInfBtn.detail
+{
+	background: #17BB0C;
+}
+
+.JobListInfBtnNotify
+{
+	background: #EB4545;
+	color: white;
+	font-size: 12px;
+	border-radius: 999rem;
+	position: absolute;
+	top: -8px;
+	right: -12px;
+	display: inline-block;
+	padding: 1px 6px;
+	transform: scale(0.8);
+}
+
+.JobListContent
+{
+	color: #434343;
+	font-size: 14px;
+	width: 100%;
+	padding: 5px 0;	
+	margin: 0 0 10px 0;
+}
+
+.JobListContent , .JobListContent p , .JobListContent article ,
+.JobListContent section
+{
+	word-break: break-all;
+}
+
+.JobListContentImg
+{
+	width: auto;
+	max-width: 100%;
+	margin: 10px 0;
+}
+
+.JobListContentImg img
+{
+	max-width: 100%;
+	width: auto;
+}
+
+.JobListDate
+{
+	/* border-bottom: 1px solid #BEBEBE; */
+	color: #424242;
+	padding: 0 0 10px 0;
+	font-size: 14px;
+	width: 100%;
+	text-align: right;
+}
+
+.JobListChatBox
+{
+	display: none;
+	width: 100%;
+	padding: 20px 0;
+}
+
+.JobListChatBox.active
+{
+	display: block;
+}
+
+/*     雇主查看評論     */
+.JobListCommentsBox
+{
+	border-top: 1px solid #BEBEBE;
+	display: none;
+	width: 100%;
+	padding: 20px 0;
+	margin: 10px 0 0 0;
+}
+
+.JobListCommentsBox.active
+{
+	display: block;
+}
+
+.JobListCommentsList
+{
+	background: #E4E4E4;
+	width: calc(100% - 20px);
+	padding: 10px;
+}
+
+.JobListCommentsList:not(:last-child)
+{
+	margin: 0 0 20px 0;
+}
+
+.JobListCommentsTable
+{
+	width: 100%;
+}
+
+.JobListCommentsTable > tbody > tr > td
+{
+	vertical-align: top;
+}
+
+.JobListCommentsTdPic
+{
+	width: 50px;
+}
+
+.JobListCommentsTdName
+{
+	color: #434343;
+	font-size: 16px;
+	word-break: break-all;
+}
+
+.JobListCommentsTdData
+{
+	width: calc(100% - 50px);
+	padding: 0 0 0 15px;
+}
+
+.JobListCommentsScore
+{
+	width: 100%;
+	margin: 0 0 5px 0;
+}
+
+.JobListCommentsScoreCell
+{
+	width: 18px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.JobListCommentsScoreCell img
+{
+	width: 100%;
+}
+
+.JobListCommentsContent , .JobListCommentsContent p , .JobListCommentsContent section ,
+.JobListCommentsContent article
+{
+	word-break: break-all;
+}
+
+.JobListCommentsContent
+{
+	color: #434343;
+	font-size: 14px;
+	width: 100%;
+	margin: 0 0 15px 0;
+}
+
+.JobListCommentsDate
+{
+	color: #424242;
+	font-size: 14px;
+	width: 100%;
+	text-align: right;
+}
+
+/*     人才撰寫評論     */
+.JobListFeedbackBox
+{
+	width: 100%;
+	padding: 0 0 30px 0;
+}
+
+.JobListFeedbackScoreBox
+{
+	width: 100%;
+	padding: 15px 0;
+	text-align: center;
+}
+
+.JobListFeedbackScore
+{
+	width: 25px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.JobListFeedbackScore:not(:last-child)
+{
+	margin: 0 6px 0 0;
+}
+
+.JobListFeedbackScore img
+{
+	width: 100%;
+}
+
+.JobListFeedbackTit
+{
+	color:#434343;
+	margin: 0 0 5px 0;
+	text-align: center;
+	font-size: 14px;
+	width: 100%;
+}
+
+.JobListFeedbackContent
+{
+	color: #434343;
+	border: 1px solid #BEBEBE;
+	font-size: 14px;
+	width: calc(100% - 22px);
+	padding: 10px 10px 30px 10px;
+	position: relative;
+}
+
+.JobListFeedbackContent.active
+{
+	padding: 10px;
+}
+
+.JobListFeedbackContent .Textarea textarea
+{
+	color: #434343;
+	font-size: 14px;
+	padding: 0;
+}
+
+.JobListFeedbackContentTxt
+{
+	width: 100%;
+	word-break: break-all;
+	min-height: 90px;
+}
+
+.JobListFeedbackBtnBox
+{
+	width: calc(100% - 40px);
+	margin: 20px 20px 0 20px;
+}
+
+/*     顯示隱藏     */
+.JobListBtnViewBox
+{
+	width: 100%;
+	text-align: center;
+	padding: 15px 0 0 0;
+	display: block;
+}
+
+.JobListBtnView
+{
+	color: #434343;
+	font-size: 14px;
+	display: inline-block;
+	padding: 0 5px;
+}
+
+.JobListBtnView .less
+{
+	display: none;
+}
+
+.JobListBtnView.active .more
+{
+	display: none;
+}
+
+.JobListBtnView.active .less
+{
+	display: inline-block;
+}
+
+.serviceListInviteQ
+{
+	color: #434343;
+	text-align: left;
+	font-size: 14px;
+	margin: 0 0 10px 0;
+}
+
+.serviceListInviteBtnBox
+{
+	width: 100%;
+	text-align: left;
+}
+
+.serviceListInviteBtn
+{
+	background: white;
+	border: 1px solid #BF97FF;
+	color: #BF97FF;
+	display: inline-block;
+	vertical-align: middle;
+	width: 77px;
+	padding: 5px 3px;
+	border-radius: 5px;
+	font-size: 14px;
+	text-align: center;
+}
+
+.serviceListInviteBtn:not(:last-child)
+{
+	margin: 0 5px 0 0;
+}
+
+.serviceListInviteBtn.active
+{
+	color: white;
+	background: #BF97FF;
+}
+
+/*     選擇器     */
+.WindowSelectBox
+{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: 13;
+}
+
+.WindowSelectTop
+{
+	background: white;
+	border-bottom: 1px solid #707070;
+	text-align: center;
+	border-radius: 20px 20px 0 0;
+	width: 100%;
+	position: relative;
+	padding: 13px 0;
+}
+
+.WindowSelectTopBtn
+{
+	color: #434343;
+	font-size: 15px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
+.WindowSelectTopBtn.left
+{
+	left: 15px;
+}
+
+.WindowSelectTopBtn.right
+{
+	right: 15px;
+}
+
+.WindowSelectTopTit
+{
+	color:#7455A4;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.WindowSelectItemBox
+{
+	background: white;
+	width: 100%;
+	max-height: 300px;	
+	overflow-y: scroll;
+}
+
+.WindowBox[data-filter="Area"] .WindowSelectItemBox ,
+.WindowBox[data-filter="Type"] .WindowSelectItemBox
+{
+	min-height: 300px;
+}
+
+.WindowSelectItem
+{
+	width: calc(100% - 30px);
+	padding: 12px 15px;
+	position: relative;
+}
+
+.WindowSelectItem:not(:last-child)
+{
+	border-bottom: 1px solid #707070;
+}
+
+.WindowSelectItem.city:not(:last-child)
+{
+	background: #eeeeee;
+}
+
+.WindowSelectItemTxt
+{
+	color: #434343;
+	width: calc(100% - 35px);
+	word-break: break-all;
+	font-size: 16px;
+}
+
+.WindowSelectItem.city .WindowSelectItemTxt
+{
+	width: calc(100% - 80px);
+}
+
+.WindowSelectItemBtn
+{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 15px;
+	z-index: 1;
+}
+
+.WindowSelectItemSetting
+{
+	width: 80px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 15px;
+	z-index: 1;
+	text-align: right;
+}
+
+.WindowSelectItemSetting label
+{
+	border: 1px solid #EA76AC;
+	color: #EA76AC;
+	font-size: 13px;
+	padding: 3px 5px;
+	border-radius: 5px;
+	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.WindowSelectItemSetting input[type="checkbox"]:checked + label
+{
+	background: #EA76AC;
+	color: white;
+}
+
+.WindowSelectItemSettingBtnMore
+{
+	font-size: 24px;
+	display: inline-block;
+	margin: 0 0 0 10px;
+	vertical-align: middle;
+	font-weight: 600;
+	text-align: left;
+	width: 20px;
+}
+
+.WindowSelectItemSettingBtnMore .less
+{
+	display: none;
+	font-size: 34px;
+}
+
+.WindowSelectItemSettingBtnMore.active .more
+{
+	display: none;
+}
+
+.WindowSelectItemSettingBtnMore.active .less
+{
+	display: inline-block;
+}
+
+.WindowSelectItemBtn label
+{
+	display: block;
+}
+
+.WindowSelectItemBtn input[type="checkbox"]
+{
+	background: white;
+	border: 1px solid #707070;
+	border-radius: 2px;
+	width: 18px;
+	height: 18px;
+	position: relative;
+}
+
+.WindowSelectItemBtn input[type="checkbox"]:checked
+{
+	background: #FFD9EB;
+	border: 1px solid #FFD9EB;
+}
+
+.WindowSelectItemBtn input[type="checkbox"]::after
+{
+	border: solid #EA76AC;
+	content: '';
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 4px;
+	width: 4px;
+	height: 9px;	
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	display: none;
+}
+
+.WindowSelectItemBtn input[type="checkbox"]:checked::after
+{
+	display: block;
+}
+
+.WindowSelectBtnBox
+{
+	width: 100%;
+	text-align: center;
+}
+
+.WindowSelectBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;
+	font-size: 16px;
+	width: 100%;
+	padding: 17px 0;
+}
+
+/*     Top     */
+.Top
+{
+	background: #434343;
+	width: 54px;
+	height: 54px;
+	border-radius: 999rem;
+	position: fixed;
+	bottom: 80px;
+	right: 5px;
+	text-align: center;
+	z-index: 10;
+	display: none;
+}
+
+.Top.active
+{
+	display: block;
+}
+
+.Top.high
+{
+	bottom: 230px;
+}
+
+.TopContainer
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.TopIcon
+{
+	color: white;
+	font-size: 18px;
+	margin: 0 0 -4px 0;
+}
+
+.TopTxt
+{
+	color: white;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+/*     上傳照片     */
+.FileBtnAdd
+{
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	background: white;
+	display: block;
+	width: 100%;
+	position: relative;
+	text-align: center;
+	height: 200px;
+}
+
+.FileBtnAdd.active
+{
+	
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	border: 1px solid #BF97FF;
+	box-sizing: border-box;
+	padding: 23px 0;
+	margin: 40px auto 0 auto;
+	width: calc(100% - 80px);
+	border-radius: 999rem;
+	font-size: 14px;
+	font-weight: 600;
+	height: unset;	
+}
+
+.FileBtnAdd input[type="file"] , .FileBtnAdd div
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.FileBtnAdd input[type="file"]
+{
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	opacity: 0;
+}
+
+.FileBtnAdd div
+{
+	color: #434343;
+	width: 100%;	
+	font-size: 14px;
+	text-decoration: underline;
+	z-index: 2;
+}
+
+.FileBtnAdd .change
+{
+	display: none;
+}
+
+.FileBtnAdd.active div
+{
+	color: #7455A4;
+	text-decoration: none;
+}
+
+.FileBtnAdd.active .original
+{
+	display: none;
+}
+
+.FileBtnAdd.active .change
+{
+	display: block;
+}
+
+.FileImg
+{
+	width: 100%;
+}
+
+.FileImg img
+{
+	width: auto;
+	max-width: calc(100% - 15px);
+	margin: 0 0 0 15px;
+}
+
+/*     表格資料     */
+.FormBox
+{
+	width: 100%;
+}
+
+.FormTable
+{
+	color: #434343;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	font-size: 13px;
+	width: 100%;
+	text-align: center;
+	border-radius: 20px;
+}
+
+.FormTable thead
+{
+	background: #7455A4;
+}
+
+.FormTable tbody
+{
+	background: white;
+}
+
+.FormTable th , .FormTable td
+{
+	min-width: 30px;
+}
+
+.FormTable th
+{
+	color: white;
+	padding: 8px 2px;
+	font-weight: normal;
+}
+
+.FormTable th:first-child
+{
+	border-radius: 20px 0 0 0;
+}
+
+.FormTable th:last-child
+{
+	border-radius: 0 20px 0 0;
+}
+
+.FormTable .Sel
+{
+	border-bottom: 1px solid #434343;
+	color: #434343;
+	border-radius: 0;
+	font-size: 14px;
+	position: relative;
+	display: inline-block;
+	width: unset;	
+}
+
+.FormTable .Sel select
+{
+	padding: 0 20px 0 10px;
+}
+
+.FormTable .Sel i
+{
+	color: #434343;
+	font-size: 12px;
+	position: absolute;
+	top: calc(50% + 2px);
+	transform: translateY(-50%);
+	right: 0;
+}
+
+.FormTable tbody td
+{
+	border-bottom: 1px solid #BEBEBE;
+	padding: 7px 4px;
+}
+
+.FormTable tbody td:first-child ,
+.FormTable tbody td:last-child
+{
+	position: relative;
+}
+
+.FormTable tbody td:first-child::after ,
+.FormTable tbody td:last-child::after
+{
+	background: white;
+	position: absolute;
+	content: '';
+	display: block;
+	bottom: -1px;
+	z-index: 1;
+	width: 7px;
+	height: 1px;
+}
+
+.FormTable tbody td:first-child::after
+{
+	left: 0;
+}
+
+.FormTable tbody td:last-child::after
+{
+	right: 0;
+}
+
+.FormTable tfoot
+{
+	background: white;
+	border-radius: 0 0 20px 20px;
+}
+
+.FormTable tfoot td
+{
+	padding: 10px 2px 0 2px;
+}
+
+.FormTable tfoot tr:last-child td:first-child
+{
+	border-radius: 0 0 0 20px;
+}
+
+.FormTable tfoot tr:last-child td:last-child
+{
+	border-radius: 0 0 20px 0;
+}
+
+.FormTable tfoot tr:last-child td
+{
+	padding: 10px 2px;
+}
+
+.FormTable.noFoot tr:last-child td
+{
+	border-bottom: unset;
+}
+
+.FormTable.noFoot tr:last-child td:first-child
+{
+	border-radius: 0 0 0 20px;
+}
+
+.FormTable.noFoot tr:last-child td:last-child
+{
+	border-radius: 0 0 20px 0;
+}
+
+.FormThDate , .FormTdDate
+{
+	width: 85px;
+}
+
+.FormFontRed
+{
+	color: #EB4545;
+}
+
+.FormFontPos
+{
+	color: #EB4545;
+}
+
+.FormFontNeg
+{
+	color: #17BB0C;
+}
+
+.FormFontTime
+{
+	color: #424242;
+}
+
+/*     搜尋-搜尋按鈕     */
+.FormSearchTable
+{
+	width: 100%;
+}
+
+.FormSearchTable td
+{
+	padding: 0 4px;
+}
+
+.FormSearchTable td:first-child
+{
+	padding: 0 4px 0 0;
+}
+
+.FormSearchTable td:last-child
+{
+	padding: 0 0 0 4px;
+}
+
+.FormSearchBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	border-radius: 10px;
+	width: 65px;
+	text-align: center;
+	position: relative;
+}
+
+.FormSearchBtn input[type="submit"]
+{
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+.FormSearchBtnTxt
+{
+	color: white;
+	font-size: 24px;
+	padding: 4px 0;
+}
+
+/*     搜尋-日期範圍     */
+.FormSearchDateTable
+{
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+.FormSearchDateTd
+{
+	width: 50%;
+}
+
+.FormSearchDateTd .Ipt
+{
+	position: relative;
+}
+
+.FormSearchDateTd .Ipt input
+{
+	padding: 0 0 0 25px;
+	font-size: 12px;
+}
+
+.FormSearchDateTd i
+{
+	color: #424242;
+	font-size: 15px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 5px;
+}
+
+.FormSearchDateTdTxt
+{
+	color: #424242;
+	font-size: 14px;
+	text-align: center;
+	min-width: 20px;
+	width: 20px;
+}
+
+/*     Emoji     */
+.EmojiBox
+{
+	position: absolute;
+	right: 15px;
+	bottom: 5px;
+	z-index: 9;
+}
+
+.EmojiBtnSwitch
+{
+	color: #7455A4;
+	font-size: 20px;
+}
+
+.EmojiContentInput
+{
+	background: white;
+	word-break: break-all;
+	display: block;	
+	padding: 9px 5px;
+	border-radius: 5px;
+	width: calc(100% - 10px);
+	max-width: calc(100% - 10px);
+	height: 22px;	
+	font-size: 14px;
+	overflow-y: scroll;
+}
+
+.myjobIptBox.active .EmojiContentInput
+{
+	max-height: 120px;
+	min-height: 22px;
+	height: unset;
+}
+
+.EmojiContentInput:focus
+{
+	box-shadow: 0 0 0 2px #EA76AC;
+	outline: unset;
+	border-radius: 5px;
+}
+
+.EmojiContentInput img
+{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	padding: 2px 0;
+}
+
+.EmojiContentInput img:not(:last-child)
+{
+	margin: 0 4px 0 0;
+}
+
+.EmojiContentPhotoBox
+{
+	max-height: 250px;	
+	overflow-y: scroll;
+}
+
+.EmojiContentPhotoBox.active
+{
+	box-sizing: border-box;
+	padding: 5px 0 0 10px;
+	margin: 15px 0 0 0;
+}
+
+.EmojiContentPhotoBlock
+{
+	width: 100%;
+	position: relative;
+}
+
+.EmojiContentPhotoBox.active .EmojiContentPhotoBlock:not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+.EmojiContentPhoto
+{
+	width: auto;
+	max-width: 100px;	
+}
+
+.EmojiContentPhotoBtn
+{
+	background: rgba(0,0,0,.8);
+	width: 18px;
+	height: 18px;
+	border-radius: 999rem;
+	position: absolute;
+	top: -5px;
+	left: -9px;
+	z-index: 1;
+}
+
+.EmojiContentPhotoBtn i
+{
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+	font-size: 11px;
+}
+
+.EmojiImgBox
+{
+	border-top: 1px solid #ebebeb;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,.3);
+	background: white;
+	padding: 5px;
+	height: 93px;
+	overflow-y: scroll;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: calc(100% - 10px);
+	z-index: 15;
+}
+
+.EmojiImgBox.active2
+{
+	position: unset;
+	bottom: unset;
+	left: unset;
+}
+
+.EmojiImgTable
+{
+	width: 100%;
+}
+
+.EmojiImgTd
+{
+	padding: 5px;
+}
+
+.EmojiImgIcon
+{
+	width: 18px !important;
+	padding: 2px 0;
+	display: inline-block !important;
+	vertical-align: middle;
+}
+
+.EmojiImgBox .EmojiImg , .EmojiImgBox .EmojiImgIcon , .EmojiImg img
+{
+	width: 100%;
+}
+
+.EmojiImgIcon:not(:last-child)
+{
+	margin: 0 2px 0 0;
+}
+
+.MsgIptBg
+{
+	background: rgba(0,0,0,0.6);
+	width: 100%;
+	height: calc(100% - 58px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: none;
+}
+
+.myjobIptBox.active .MsgIptBg
+{
+	display: block;
+}
+
+.enterMessagePhotoTd + .myjobIptTdBtn
+{
+	padding: 0 0 0 10px;
+}
+
+/*     傳送訊息發送圖片     */
+.enterMessagePhotoTd
+{
+	width: 35px;
+	position: relative;	
+}
+
+.enterMessagePhoto
+{
+	background: #EA76AC;
+	border-radius: 5px;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	padding: 21px 0;
+	z-index: 1;
+}
+
+.enterMessagePhoto input , .enterMessagePhoto i
+{
+	position: absolute;	
+	left: 50%;
+	transform: translateX(-50%);	
+}
+
+.enterMessagePhoto input
+{
+	width: 100%;
+	display: block;
+	padding: 9.5px 0;
+	z-index: 5;
+	opacity: 0;
+	bottom: 0;
+}
+
+.enterMessagePhoto i
+{
+	color: white;
+	font-size: 14px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+}
+
+/*****     轉帳&提領-共同     *****/
+.MoneyActBox
+{
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,.16);
+	border-radius: 20px;
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	padding: 20px 0 25px 0;
+}
+
+.MoneyActBox:not(:last-child)
+{
+	margin: 0 auto 15px auto;
+}
+
+.MoneyActTable
+{
+	color: #434343;
+	width: calc(100% - 20px);
+	margin: 0 auto;
+	font-size: 14px;
+}
+
+.MoneyActTable tbody tr:first-child
+{
+	border-bottom: 1px solid #E4E4E4;
+}
+
+.MoneyActTdCell1
+{
+	width: 120px;
+	padding: 15px 5px 5px 0;
+}
+
+.MoneyActTable tbody:first-child tr .MoneyActTdCell1
+{
+	padding: 0 5px 5px 0;
+}
+
+.MoneyActTit
+{
+	color: #7455A4;
+}
+
+.MoneyActTdCell2
+{
+	width: calc(100% - 120px);
+	padding: 15px 0 5px 0;
+}
+
+.MoneyActTable tbody:first-child tr .MoneyActTdCell2
+{
+	padding: 0 0 5px 0;
+}
+
+.MoneyActTdCell2 .Ipt , .MoneyActTdCell2 .Sel , .MoneyActTdCell2 .Textarea
+{
+	border: unset;
+	background: unset;	
+}
+
+.MoneyActTdCell2 .Ipt input , .MoneyActTdCell2 .Sel select , .MoneyActTdCell2 .Textarea textarea
+{
+	padding: 0;
+	min-height: 30px;
+}
+
+.MoneyActTdCell2 .Textarea textarea
+{
+	min-height: 19px;
+}
+
+.MoneyActTdCell2 .Ipt input , .MoneyActTdCell2 .Ipt input::placeholder
+{
+	color: #434343;
+}
+
+.MoneyActTdCell2 .Ipt input.FontRedImp::placeholder
+{
+	color: #EB4545;
+}
+
+.MoneyActTdCell2.multiple
+{
+	position: relative;
+}
+
+.MoneyActTdCell2.multiple .Ipt
+{
+	width: calc(100% - 100px);
+}
+
+.MoneyActBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	position: absolute;
+	border-radius: 5px;
+	right: 4px;
+	bottom: 5px;
+	z-index: 1;
+	text-align: center;
+	width: 80px;
+	padding: 0 5px;
+	display: inline-block;
+}
+
+.MoneyActBtnTxt
+{
+	color: white;
+	font-size: 14px;
+	padding: 6px 0;
+}
+
+.MoneyActTdNotice
+{
+	padding: 10px 0;
+}
+
+/*****     Header     *****/
+header
+{
+	background: white;
+	border-bottom: 1px solid #E4E4E4;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	width: 100%;
+}
+
+.headerContainer
+{
+	width: calc(100% - 30px);
+	margin: 0 15px;
+	padding: 10px 0;
+	text-align: center;
+	position: relative;
+	min-height: 21px;
+}
+
+.headerTit
+{
+	color: #EA76AC;
+	font-size: 16px;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.Boss .headerTit
+{
+	color: #7455A4;
+}
+
+.headerLeft , .headerRight0
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.headerLeft
+{
+	left: 0;
+}
+
+.headerIcon
+{
+	color: #686868;
+	font-size: 25px;
+}
+
+.headerBtn , .headerBtn2 , .headerBtn3
+{
+	display: inline-block;
+	padding: 11px 17px;
+	border-radius: 5px;
+	font-size: 14px;
+}
+
+.headerBtn , .headerBtn3.active
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;	
+}
+
+.headerBtn2
+{
+	background: #EA76AC;
+	color: white;
+}
+
+.headerBtn3
+{
+	background: #E4E4E4;
+	color: white;
+}
+
+.headerRight0
+{
+	right: 0;
+}
+
+/*****     登入 & 註冊 & 忘記密碼     *****/
+.accessBox
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 100%;
+	min-height: calc(100vh - 122px);
+	padding: 91px 0 30px 0;
+}
+
+.accessBlock
+{
+	background: rgba(255,255,255,0.3);
+	box-shadow: 0 3px 10px 0 rgba(0,0,0,0.2);
+	border-radius: 30px;
+	width: calc(100% - 70px);
+	margin: 0 15px;
+	padding: 20px 20px 40px 20px;
+}
+
+.accessTopic
+{
+	color: #434343;
+	text-align: center;
+	font-weight: 600;
+	font-size: 18px;
+	width: 100%;
+	padding: 30px 0 20px 0;
+}
+
+.accessKindBox
+{
+	width: 100%;
+}
+
+.accessKindBtn
+{
+	border: 1px solid #BF97FF;
+	background: white;
+	color: #7455A4;
+	font-size: 16px;
+	text-align: center;
+	border-radius: 999rem;
+	display: block;
+	float: left;
+	width: calc(50% - 10px);
+	padding: 10px 0;
+}
+
+.accessKindBtn:not(:last-child)
+{
+	margin: 0 16px 0 0;
+}
+
+.accessKindBtn.active
+{
+	color: white;
+	background: #BF97FF;
+}
+
+.accessKindBtn input
+{
+	display: none;
+}
+
+.accessData
+{
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+.accessTable
+{
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0 20px;
+}
+
+.accessTr
+{
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	border-radius: 999rem;
+}
+
+.accessTd:first-child
+{
+	color: #7455A4;
+	font-size: 14px;
+	border-radius: 999rem 0 0 999rem;
+	padding: 6px 0 6px 15px;
+}
+
+.accessTd:nth-child(2)
+{
+	border-radius: 0 999rem 999rem 0;
+	padding: 6px 10px 6px 0;
+}
+
+.accessTd .Ipt , .accessTd .Sel
+{
+	border: unset;
+}
+
+/*****     登入     *****/
+.accessBox.login
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 100%;
+	min-height: calc(100vh - 60px);
+	padding: 0 0 60px 0;
+}
+
+.accessLogo
+{
+	width: 50%;
+	margin: 0 auto;
+	padding: 40px 0 30px 0;
+}
+
+.accessLogo img
+{
+	width: 100%;
+}
+
+.login .accessBlock
+{
+	padding: 20px 20px 30px 20px;
+}
+
+.login .accessData
+{
+	margin: 0;
+}
+
+.login .accessTd:first-child
+{
+	text-align: right;
+	width: 20px;
+	font-size: 15px;
+}
+
+.login .accessTd input , .login .accessTd input::placeholder
+{
+	color: #7455A4;
+	font-size: 14px;
+}
+
+.loginRem
+{
+	margin: -5px 0 15px 0;
+	padding: 0 0 0 20px;
+}
+
+.loginRem input[type="checkbox"] , .loginRem span
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.loginRem input[type="checkbox"]
+{
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	border-radius: 999rem;
+	width: 18px;
+	height: 18px;
+	margin: 0 3px 0 0;
+	position: relative;
+}
+
+.loginRem input[type="checkbox"]::after
+{
+	border: solid #EA76AC;
+	content: '';
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 5px;
+	width: 4px;
+	height: 9px;	
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	display: none;
+}
+
+.loginRem input[type="checkbox"]:checked::after
+{
+	display: block;
+}
+
+.loginRem span
+{
+	color: #434343;
+	font-size: 14px;	
+}
+
+.loginBtnBox
+{
+	border-top: 2px solid white;
+	margin: 30px 15px 0 15px;
+	padding: 20px 0 0 0;
+	width: calc(100% - 30px);
+	text-align: center;
+}
+
+.loginBtn
+{
+	background: white;
+	color: #7455A4;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	display: inline-block;
+	font-size: 14px;
+	border-radius: 999rem;
+	min-width: 160px;
+	padding: 13px 0;
+}
+
+.loginBtn:first-child
+{
+	margin: 0 10px 0 0;
+}
+
+/*****     選擇方案     *****/
+.chooseBox
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 100%;
+	min-height: calc(100vh - 122px);
+	padding: 92px 0 30px 0;
+}
+
+.chooseBlock
+{
+	background: white;
+	box-shadow: 0 3px 10px 0 rgba(0,0,0,0.16);
+	text-align: center;
+	border-radius: 30px;
+	width: calc(100% - 80px);
+	margin: 0 15px;
+	padding: 35px 25px;
+	position: relative;
+}
+
+.chooseContainer
+{
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.chooseBlock:not(:last-child)
+{
+	margin: 0 15px 30px 15px;
+}
+
+.chooseTit
+{
+	color: #7B73F2;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 0 15px 0;
+}
+
+.chooseSubTit
+{
+	color: #686868;
+	font-size: 14px;
+	margin: 0 0 25px 0;
+}
+
+/*****     條款     *****/
+.termsBox
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 100%;
+	min-height: calc(100vh - 122px);
+	padding: 92px 0 30px 0;
+}
+
+.termsBlock
+{
+	background: white;
+	color: #434343;
+	box-shadow: 0 3px 10px 0 rgba(0,0,0,0.2);
+	border-radius: 20px;
+	width: calc(100% - 70px);
+	margin: 0 15px 35px 15px;
+	padding: 20px 20px 40px 20px;
+	font-size: 14px;
+	padding: 20px;
+}
+
+.termsBlock > div:not(:last-child)
+{
+	margin: 0 0 15px 0;
+}
+
+.termsBlock > div:first-child
+{
+	margin: 0 0 20px 0;
+}
+
+.termsBlock > div > div:not(:last-child) , .termsBlock > div > div > div:not(:last-child)
+{
+	margin: 0 0 5px 0;
+}
+
+.termsBtnBox
+{
+	width: calc(100% - 80px);
+	margin: 0 40px;
+}
+
+/*****     首頁     *****/
+/*     上線人數     */
+.indexView
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%);
+	word-break: break-all;
+	width: 100%;
+	padding: 11px 0;
+	margin: 0 0 10px 0;
+}
+
+.indexViewTopic , .indexViewKind , .indexViewKindTit ,
+.indexViewKindNum
+{
+	display: inline-block;
+}
+
+.indexViewTopic
+{
+	color: #434343;
+	padding: 0 0 0 15px;
+	font-size: 16px;
+	margin: 0 20px 0 0;
+}
+
+.indexViewKind:not(:last-child)
+{
+	margin: 0 10px 0 0;
+}
+
+.indexViewKindTit
+{
+	color: #434343;
+	font-size: 16px;
+}
+
+.indexViewKindNum
+{
+	color: #7455A4;
+	font-size: 16px;
+}
+
+/*     上線會員     */
+.onlineBox
+{
+	background: white;
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	width: 100%;
+	padding: 5px 0;
+}
+
+.onlineContainer
+{
+	width: 100%;
+}
+
+.onlineUserBox
+{
+	width: 100%;
+	position: relative;
+}
+
+.onlineUserView
+{
+	width: calc(100% - 80px);
+	margin: 0 40px;
+	padding: 3px 0 0 0;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.onlineUserView .selfieBox
+{
+	display: inline-block;
+	margin: 0 0 -4px 0;
+	width: 40px;
+	height: 40px;
+}
+
+.onlineUserView .selfieBox:not(:nth-last-child(2))
+{
+	margin: 0 7px -4px 0;
+}
+
+.onlineUserBtn
+{
+	color: #707070;
+	text-align: center;
+	font-size: 16px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.onlineUserBtnPrev
+{
+	left: 0;
+}
+
+.onlineUserBtnNext
+{
+	right: 0;
+}
+
+.onlineBtnBox
+{
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+
+.onlineBtn
+{
+	color: #7455A4;
+	font-size: 12px;
+}
+
+.onlineBtn span , .onlineBtn i
+{
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+.onlineBtn span
+{
+	margin: 0 5px 0 0;
+}
+
+/*     選擇區域     */
+.indexChooseBox
+{
+	width: 100%;
+	min-height: calc(100vh - 334px);
+	padding: 30px 0;
+}
+
+.indexChooseTable
+{
+	width: calc(100% - 30px);
+	margin: 0 15px;
+}
+
+.indexChooseTable td
+{
+	width: 50%;
+}
+
+.indexChooseTable td:first-child
+{
+	padding: 0 8px 14px 0;
+}
+
+.indexChooseTable td:nth-child(2)
+{
+	padding: 0 0 14px 8px;
+}
+
+.indexChooseBlock
+{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+	color: #434343;
+	font-weight: 600;
+	position: relative;
+	font-size: 20px;
+	text-align: center;
+	display: block;
+	width: 100%;
+	border-radius: 30px;
+}
+
+.indexChooseBlock::after
+{
+	content: '';
+	display: block;
+	padding-bottom: 100%;
+}
+
+.indexChooseTxt
+{
+	padding: 5px 10px;
+	max-width: 90%;
+	word-break: break-all;
+	box-sizing: border-box;
+	border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+/*****     上班人才     *****/
+.workBox
+{
+	width: 100%;
+}
+
+.workTable
+{
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 15px 20px;
+}
+
+.workTable td
+{
+	width: 20%;
+	max-width: 20%;
+}
+
+.workTable td a
+{
+	width: 100%;
+	display: block;
+}
+
+.workUserBlock
+{
+	width: 100%;
+	display: block;
+}
+
+.workUserPic
+{
+	width: 50px;
+	height: 50px;
+}
+
+.workUserPic .selfieStatus
+{
+	width: 14px;
+	height: 14px;
+	top: -6px;
+	right: -6px;
+}
+
+.workUserName
+{
+	color: #686868;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+/*****     搜尋工作     *****/
+.headerFindIpt , .headerFindBtn
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.headerFindIpt
+{
+	background: #E4E4E4;
+	border-radius: 5px;
+	width: calc(100% - 110px);
+	margin: 0 0 0 40px;
+}
+
+.headerFindIpt input
+{
+	min-height: 41px;
+	padding: 0 10px;
+}
+
+.headerFindIpt input
+{
+	color: #424242;
+}
+
+.headerFindIpt input::placeholder
+{
+	color: #BEBEBE;
+}
+
+.headerFindBtn
+{
+	background: #EA76AC;
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	padding: 5px 20px;
+	font-size: 23px;
+}
+
+.headerFindBtn input[type="submit"]
+{
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	opacity: 0;
+}
+
+.findFilterBox
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%);
+	word-break: break-all;
+	width: calc(100% - 30px);
+	padding: 11px 15px;
+	margin: 0 0 10px 0;
+	position: relative;
+}
+
+.findFilterTable
+{
+	width: 100%;
+}
+
+.findFilterTopic
+{
+	color: #434343;
+	font-size: 12px;
+	width: 90px;
+	position: absolute;
+	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.findFilterKindCell
+{
+	width: calc(100% - 100px);
+	padding: 0 0 0 10px;
+	float: right;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.findFilterKindBtn
+{
+	background: white;
+	border: 1px solid #BF97FF;
+	color: #7455A4;
+	min-width: 77px;
+	padding: 5px 3px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 5px;
+}
+
+.findFilterKindBtn:not(:last-child)
+{
+	margin: 0 8px 0 0;
+}
+
+.findFilterKindBtn.active
+{
+	background: #BF97FF;
+	color: white;
+}
+
+.findListBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+/*****     個人資訊 & 編輯頁面     *****/
+.infProfileBox
+{
+	width: 100%;
+}
+
+.infProfileTop
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%); 
+	width: 100%;
+	text-align: center;
+	padding: 18px 0;
+	margin: 0 0 5px 0;
+}
+
+.Boss .infProfileTop
+{
+	background: linear-gradient(to right, #B3E4E9 0%,#D7D5F6 100%); 
+}
+
+.infProfileImg
+{
+	display: inline-block;
+	width: 75px;
+	height: 75px;
+}
+
+.infProfileImg .selfieStatus
+{
+	width: 14px;
+	height: 14px;
+	top: -8px;
+	right: -8px;
+}
+
+.infProfileName
+{
+	color: #434343;
+	width: 100%;
+	font-size: 16px;
+	margin: 0 0 2px 0;
+}
+
+.infProfileName span
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.infProfileKind
+{
+	border: 1px solid #BF97FF;
+	background: white;
+	color: #BF97FF;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 1px 9px;
+	margin: 0 0 0 2px;
+}
+
+.infProfileAccount
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+/*     資訊分類     */
+.infProfileMenuBox
+{
+	width: 100%;
+	text-align: center;
+	margin: 15px 0 0 0;
+}
+
+.infProfileMenu
+{
+	border: 1px solid #BF97FF;
+	background: white;
+	color: #7455A4;
+	min-width: 74px;
+	font-size: 14px;
+	padding: 5px 2px;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.infProfileMenu:not(:last-child)
+{
+	margin: 0 8px 0 0;
+}
+
+.infProfileMenu.active
+{
+	background: #BF97FF;
+	color: white;
+}
+
+/*     資訊     */
+.infData
+{
+	border-top: 1px solid #BEBEBE;
+	width: 100%;
+	margin: 0 0 20px 0;
+}
+
+.infData tr
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+}
+
+.infData td
+{
+	word-break: break-all;
+}
+
+.infDataCell1
+{
+	width: 115px;	
+}
+
+.infDataTit
+{
+	color: #7455A4;
+	display: block;
+	font-size: 14px;
+	width: calc(100% - 20px);
+	padding: 14px 5px 14px 15px;
+}
+
+.infDataCell2
+{
+	width: calc(100% - 115px);
+	padding: 10px 0;
+	position: relative;
+}
+
+.infDataCell2 .Ipt , .infDataCell2 .Sel , .infDataCell2 .Textarea
+{
+	border: unset;
+}
+
+.infDataTxt
+{
+	color: #434343;
+	font-size: 14px;
+	width: calc(100% - 15px);
+	padding: 14px 15px 14px 0;
+}
+
+.infDataSubMemo
+{
+	color: #b1b1b1;
+	font-size: 13px;
+}
+
+.infData .Ipt input
+{
+	color: #424242;
+	padding: 0;
+}
+
+.infData .Sel
+{
+	width: calc(100% - 15px);
+}
+
+.infData .Sel select
+{
+	color: #424242;
+	padding: 0;
+}
+
+.infDataChooseCell
+{
+	position: relative;
+}
+
+.infDataChooseCell .infDataTxt , .infDataChooseCell .Ipt
+{
+	width: calc(100% - 135px);
+	word-break: break-all;
+}
+
+.infDataChoose
+{
+	width: 110px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 15px;
+}
+
+.infDataChoose label
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.infDataChoose label:not(:last-child)
+{
+	margin: 0 10px 0 0;
+}
+
+.infDataChoose input[type="radio"] , .infDataChoose span
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.infDataChoose input[type="radio"]
+{
+	background: white;
+	border: 1px solid #686868;
+	border-radius: 999rem;
+	width: 15px;
+	height: 15px;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.infDataChoose input[type="radio"]::after
+{
+	background: #EA76AC;
+	content: '';
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	border-radius: 999rem;
+	width: 15px;
+	height: 15px;
+	display: none;
+	box-sizing: border-box;
+}
+
+.infDataChoose input[type="radio"]:checked
+{
+	border: 1px solid #EA76AC;
+}
+
+.infDataChoose input[type="radio"]:checked::after
+{
+	display: block;
+}
+
+.infDataChoose span
+{
+	color: #434343;
+	font-size: 14px;	
+}
+
+.infScore
+{
+	width: 25px;
+	display: inline-block;
+}
+
+.infScore:not(:last-child)
+{
+	margin: 0 5px 0 0;
+}
+
+.infScore img
+{
+	width: 100%;
+}
+
+.infDataArrow
+{
+	color: #434343;
+	width: calc(100% - 15px);
+	padding: 14px 15px 14px 0;
+	display: block;
+	text-align: right;
+}
+
+/*****     個人資訊     *****/
+.infBtnActBox
+{
+	width: 100%;
+}
+
+.infBtnAct
+{
+	background: #EB4545;
+	color: white;
+	width: 100%;
+	padding: 15px 0;
+	font-size: 14px;
+	text-align: center;
+}
+
+.infBtnAct.infFriend
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%); 
+}
+
+.infBtnAct.infFriend.disable
+{
+	background: #BEBEBE; 
+}
+
+.infBtnActTxt
+{
+	width: 100%;
+}
+
+.infProfileBtnBox
+{
+	width: 100%;
+	text-align: center;
+}
+
+.infProfileBtn
+{
+	display: inline-block;
+	position: relative;
+}
+
+.infProfileBtn input[type="file"]
+{
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	opacity: 0;
+}
+
+.infProfileBtn span
+{
+	color: #7455A4;
+	font-size: 12px;
+}
+
+/*     照片     */
+.infPhotoBox
+{
+	width: 100%;
+}
+
+.infPhotoTable
+{
+	width: 100%;
+}
+
+.infPhotoTd
+{
+	width: calc(100%/3);
+	padding: 0 3px 3px 3px;
+}
+
+.infPhotoTd:first-child
+{
+	padding: 0 3px 3px 0;
+}
+
+.infPhotoTd:last-child
+{
+	padding: 0 0 3px 3px;
+}
+
+.infPhotoBlock
+{
+	width: 100%;
+	height: 32vw;
+}
+
+.infPhotoBlock img
+{
+	width: 100%;
+	height: 100%;
+}
+
+.infPhotoBlock.active img
+{
+	height: 100%;
+}
+
+.infPhotoBtnAdd
+{
+	background: #FFD9EB;
+	text-align: center;
+	position: relative;
+}
+
+.infPhotoBtnAdd.active
+{
+	display: none;
+}
+
+.infPhotoBtnAdd input[type="file"] , .infPhotoBtnAdd div
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.infPhotoBtnAdd input[type="file"]
+{
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	opacity: 0;
+}
+
+.infPhotoBtnAdd div
+{
+	color: #EA76AC;
+	width: 100%;	
+	font-size: 14px;
+	text-decoration: underline;
+	z-index: 2;
+}
+
+.WindowBox header
+{
+	z-index: 14;
+}
+
+.WindowBox .headerContainer
+{
+	padding: 20px 0;
+}
+
+.infPhotoWindowBox
+{
+	width: 100%;
+	padding: 62px 0 0 0;
+}
+
+.infPhotoWindowBox img
+{
+	width: auto;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+/*     影片     */
+.infVideoBox
+{
+	width: 100%;
+	position: relative;
+}
+
+.infVideoVideo , .infVideoBox video
+{
+	width: 100%;
+}
+
+.infVideoBox video
+{
+	display: block;
+}
+
+.infVideoDecro
+{
+	color: rgba(255,255,255,0.8);
+	font-size: 90px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.infVideoBtnAdd
+{
+	background: #FFD9EB;
+	width: 100%;
+	position: relative;
+	text-align: center;
+}
+
+.infVideoBtnAdd.active
+{
+	display: none;
+}
+
+.infVideoBtnAdd::after
+{
+	content: "";
+	display: block;
+	padding-bottom: 100%;	
+}
+
+.infVideoBtnAdd input[type="file"] , .infVideoBtnAdd div
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.infVideoBtnAdd input[type="file"]
+{
+	height: 100%;
+	width: 100%;
+	z-index: 3;
+	opacity: 0;
+}
+
+.infVideoBtnAdd div
+{
+	color: #EA76AC;
+	width: 100%;	
+	font-size: 14px;
+	text-decoration: underline;
+	z-index: 2;
+}
+
+.infVideoWindowBox
+{
+	width: 100%;
+	padding: 62px 0 0 0;
+}
+
+.infVideoWindowBox video
+{
+	width: auto;
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+/*     評價     */
+.commentsBox
+{
+	padding: 15px;
+	width: calc(100% - 30px);
+}
+
+.commentsBlock
+{
+	background: #E4E4E4;
+	width: calc(100% - 30px);
+	padding: 15px 15px 10px 15px;
+}
+
+.commentsBlock:not(:last-child)
+{
+	margin: 0 0 20px 0;
+}
+
+.commentsTable
+{
+	width: 100%;
+}
+
+.commentsTable td
+{
+	vertical-align: top;
+}
+
+.commentsTable td:first-child
+{
+	width: 70px;
+	padding: 0 15px 0 0;
+}
+
+.commentsImg
+{
+	width: 50px;
+	height: 50px;
+	margin: 0 0 2px 0;
+}
+
+.commentsNick
+{
+	color: #434343;
+	font-size: 16px;
+	word-break: break-all;
+}
+
+.commentsTable td:nth-child(2)
+{
+	width: calc(100% - 70px);
+}
+
+.commentsScore
+{
+	margin: 0 0 5px 0;
+}
+
+.commentsScoreImg
+{
+	width: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.commentsScoreImg:not(:last-child)
+{
+	margin: 0 3px 0 0;
+}
+
+.commentsScoreImg img
+{
+	width: 100%;
+}
+
+.commentsTxt
+{
+	color: #434343;
+	font-size: 14px;
+	width: 100%;
+	word-break: break-all;
+}
+
+.commentsDate
+{
+	color: #BEBEBE;
+	font-size: 14px;
+	width: 100%;
+	text-align: right;
+}
+
+/*****     身分證照片     *****/
+.idBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.idBlock
+{
+	width: 100%;
+	margin: 0 0 30px 0;
+}
+
+.idTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: calc(100% - 15px);
+	padding: 0 0 0 15px;
+	margin: 0 0 10px 0;
+}
+
+/*****     銀行帳戶     *****/
+.bankListBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.bankListBlock
+{
+	background: white;
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	padding: 10px 15px;
+	width: calc(100% - 30px);
+}
+
+.bankListBlock:not(:last-child)
+{
+	margin: 0 0 15px 0;
+}
+
+.bankListTop
+{
+	border-bottom: 1px solid #BEBEBE;
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+.bankListTop td
+{
+	padding: 0 0 10px 0;
+}
+
+.bankListName
+{
+	width: calc(100% - 40px);
+	word-break: break-all;
+}
+
+.bankListBtn
+{
+	text-align: right;
+	width: 40px;
+	font-size: 15px;
+}
+
+.bankListBtn a
+{
+	color: #EB4545;
+	display: block;
+}
+
+.bankListImg , .bankListImg img
+{
+	width: 100%;
+}
+
+.bankListImg
+{
+	margin: 0 0 10px 0;
+}
+
+.bankListData
+{
+	font-size: 15px;
+}
+
+.bankListDataRow
+{
+	width: 100%;
+}
+
+.bankListDataRow:not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+/*****     新增銀行帳戶     *****/
+.bankAddBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.bankAddBlock
+{
+	width: 100%;
+	margin: 0 0 30px 0;
+}
+
+.bankAddTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: calc(100% - 15px);
+	padding: 0 0 0 15px;
+	margin: 0 0 10px 0;
+}
+
+/*****     討論區     *****/
+.discussBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.discussBlock
+{
+	background: white;
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	width: calc(100% - 40px);
+	padding: 15px 25px 15px 15px;
+}
+
+.discussBlock:not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+.discussArticleBox
+{
+	width: 100%;
+}
+
+.discussDetailBox .discussArticleBox
+{
+	border-bottom: 1px solid #BEBEBE;
+	padding: 10px 0;
+}
+
+.discussBox .discussArticleBox
+{
+	margin: 0;
+}
+
+.discussArticleTable
+{
+	width: 100%;
+}
+
+.discussArticleTable td
+{
+	vertical-align: top;
+}
+
+.discussArticlePic , .discussArticlePic .selfieBox , .discussArticlePic img
+{
+	width: 40px;
+	height: 40px;
+}
+
+.discussArticleData
+{
+	width: calc(100% - 40px);
+	padding: 0 0 0 10px;
+}
+
+.discussArticleTop
+{
+	width: 100%;
+	position: relative;
+}
+
+.discussArticleName
+{
+	color: #7455A4;
+	word-break: break-all;
+	font-size: 14px;
+	width: calc(100% - 25px);
+}
+
+.discussArticleBtnMore
+{
+	color: #7455A4;
+	font-size: 18px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.discussArticleContent , .discussArticleContent p , .discussArticleContent article
+{
+	word-break: break-all;
+}
+
+.discussArticleContent
+{
+	color: #434343;
+	margin: 5px 0;
+	font-size: 14px;
+	width: 100%;
+}
+
+.discussArticleContent img
+{
+	display: block;
+	width: auto;
+	max-width: 100%;
+}
+
+.discussArticleBot
+{
+	width: 100%;
+	position: relative;
+	text-align: right;
+}
+
+.discussArticleBtnView
+{
+	color: #7455A4;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	font-size: 14px;
+	text-decoration: underline;
+	display: inline-block;
+}
+
+.discussArticleBtnView .less
+{
+	display: none;
+}
+
+.discussArticleBtnView.active .more
+{
+	display: none;
+}
+
+.discussArticleBtnView.active .less
+{
+	display: block;
+}
+
+.discussArticleDate
+{
+	color: #BEBEBE;
+	font-size: 14px;
+	margin: 0 0 0 80px;
+	width: calc(100% - 80px);
+}
+
+.discussMsgBox
+{
+	padding: 30px 0 0 0;
+}
+
+.discussMsgBlock
+{
+	width: 100%;
+}
+
+.discussMsgBlock:not(:last-child)
+{
+	margin: 0 0 15px 0;
+}
+
+.discussIptBox
+{
+	border-top: 1px solid #BEBEBE;
+	padding: 10px 0 0 0;
+	width: 100%;
+}
+
+.discussIptTable
+{
+	width: 100%;
+}
+
+.discussIptTable > tbody > tr > td
+{
+	vertical-align: top;
+}
+
+.discussIptPic
+{
+	width: 40px;
+}
+
+.discussIptMsg
+{
+	width: calc(100% - 103px);
+	padding: 0 10px;
+	position: relative;
+}
+
+.discussIptMsgInner
+{
+	background: #E4E4E4;
+	color: #434343;
+	width: calc(100% - 45px);
+	padding: 10px 35px 10px 10px;
+	word-break: break-all;
+	max-height: 160px;
+	overflow-y: scroll;
+	border-radius: 5px;
+}
+
+.discussIptMsgInner:focus
+{
+	width: calc(100% - 47px);
+}
+
+.discussIptMsgInner img
+{
+	display: inline-block;
+	margin: 0 3px;
+	width: 20px;
+}
+
+.discussIptBtn
+{
+	text-align: center;
+	font-size: 14px;
+	width: 63px;
+}
+
+.discussIptBtn div
+{
+	background: #EA76AC;
+	color: white;
+	border-radius: 5px;
+	width: 100%;
+	padding: 11px 0;
+}
+
+/*     查看留言     */
+.discussDetailBox
+{
+	width: 100%;
+	padding: 0 0 30px 0;
+	min-height: calc(100vh - 162px);
+	margin: 10px 0 0 0;
+}
+
+.discussDetailBox .EmojiBox
+{
+	right: 20px;
+	bottom: 10px;
+}
+
+.discussDetailBox .EmojiBtnSwitch
+{
+	color: #EA76AC;
+}
+
+
+.discussdetail .EmojiContentInput
+{
+	background: #E4E4E4;
+	color: #434343;
+}
+
+.discussdetail .myjobIptContainer
+{
+	background: white !important;
+	border-top: 1px solid #BEBEBE;
+}
+
+.discussdetail .myjobIptTdBtn
+{
+	padding: 0 0 0 10px;
+}
+
+/*     新增貼文     */
+.discussPostBoxOuter .EmojiImgBox
+{
+	border-top: unset;
+	/* bottom: unset;
+	position: absolute;
+	top: 355px;
+	border-top: 0;
+	margin: -10px 0 0 0;
+	height: 120px; */
+	position: unset;
+	left: unset;
+	bottom: unset;
+}
+
+.discussPostBoxOuter .FileBtnAdd
+{
+	border: unset;
+}
+
+.discussPostBox
+{
+	width: 100%;
+	padding: 0 0 80px 0;
+	margin: 10px 0 0 0;
+}
+
+.discussPostWrite
+{
+	background: white;
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	width: 100%;
+	margin: 0 auto 160px auto;
+}
+
+.discussPostWriteList:first-child
+{
+	border-bottom: 1px solid #BEBEBE;
+}
+
+.discussPostTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15px;
+}
+
+.discussPostMsg
+{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 15px;
+	position: relative;
+}
+
+.discussPostMsg .Textarea textarea
+{
+	padding: 0;
+	min-height: 180px;
+	word-break: break-all;
+}
+
+.discussPostBtnBox
+{
+	width: calc(100% - 100px);
+	padding: 0 50px;
+}
+
+/*****     我的工作清單     *****/
+.jobListBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+/*****     我的工作     *****/
+.myjobBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.myjobChooseBox
+{
+	width: calc(100% - 70px);
+	margin: 0 0 0 70px;
+}
+
+.myjobChooseTopic
+{
+	color: #434343;
+	font-size: 12px;
+	width: 50px;
+	position: absolute;
+	left: 80px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.myjobPickBtn
+{
+	background: linear-gradient(135deg, #EA76AC 0%,#7B73F2 100%);
+	color: white;
+	display: inline-block;
+	padding: 11px 17px;
+	border-radius: 5px;
+	font-size: 14px;
+	position: absolute;
+	left: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.myjobChooseUserBox
+{
+	width: calc(100% - 50px);
+	margin: 0 0 0 50px;
+	position: relative;
+}
+
+.myjobChooseUserView
+{
+	width: calc(100% - 60px);
+	margin: 0 30px;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.myjobChooseUserView .selfieBox , .myjobChooseUserEmpty
+{
+	display: inline-block;
+	margin: 0 0 -4px 0;
+	width: 40px;
+	height: 40px;
+}
+
+.myjobChooseUserView .selfieBox:not(:nth-last-child(2)) ,
+.myjobChooseUserView .myjobChooseUserEmpty:not(:nth-last-child(2))
+{
+	margin: 0 3px -4px 0;
+}
+
+.myjobChooseUserBtn
+{
+	color: #707070;
+	text-align: center;
+	font-size: 16px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+}
+
+.myjobChooseUserBtnPrev
+{
+	left: 0;
+}
+
+.myjobChooseUserBtnNext
+{
+	right: 0;
+	text-align: right;
+}
+
+.myjobChooseUserEmpty
+{
+	border: 1px solid #E4E4E4;
+	border-radius: 5px;
+}
+
+.myjobBossBox
+{
+	margin: 10px 0;
+	width: 100%;
+	position: relative;
+}
+
+.myjobBossView
+{
+	width: calc(100% - 40px);
+	margin: 0 20px;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.myjobBossView .selfieBox
+{
+	display: inline-block;
+	margin: 0 0 -4px 0;
+	width: 40px;
+	height: 40px;
+}
+
+.myjobBossView .selfieBox:not(:nth-last-child(2))
+{
+	margin: 0 7px -4px 0;
+}
+
+.myjobBossBtn
+{
+	color: #707070;
+	font-size: 16px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+}
+
+.myjobBossBtnPrev
+{
+	left: 0;
+}
+
+.myjobBossBtnNext
+{
+	right: 0;
+	text-align: right;
+}
+
+.myjobIptBox
+{
+	width: 100%;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0;
+	z-index: 10;
+}
+
+.myjobIptBox.active
+{
+	bottom: 104px;
+	z-index: 10000;
+	height: calc(100vh - 104px);
+}
+
+.myjobIptContainer
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%);
+	padding: 10px 15px;
+	width: calc(100% - 30px);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 5;
+}
+
+.Boss .myjobIptContainer
+{
+	background: linear-gradient(to right, #B3E4E9 0%,#D7D5F6 100%);
+}
+
+.myjobIptTable
+{
+	/* table-layout: fixed; */
+	position: relative;
+	z-index: 3;
+	width: 100%;
+}
+
+.myjobIptTable > tbody > tr > td
+{
+	vertical-align: bottom;
+	padding: 0;
+}
+
+.myjobIptPic , .myjobIptPic img
+{
+	width: 40px;
+	height: 40px;
+}
+
+.myjobIptMsg
+{
+	width: calc(100% - 103px);
+	min-width: 60px;
+	padding: 0 10px !important;
+	position: relative;
+}
+
+.myjobIptBox .EmojiBox
+{
+	right: 20px;
+	bottom: unset;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.myjobIptBox .EmojiBtnSwitch
+{
+	color: #EA76AC;
+}
+
+.myjobIptTdBtn
+{
+	width: 63px;
+	text-align: center;
+}
+
+.myjobIptBtn
+{
+	background: #EA76AC;
+	color: white;
+	border-radius: 5px;	
+	font-size: 12px;	
+	padding: 13px 0;
+}
+
+/*     雇主選擇人才至工作     */
+.myjobPickListBox
+{
+	width: 100%;
+	padding: 60px 0 0 0;
+	z-index: 13;
+	position: relative;
+	max-height: calc(80vh - 60px);
+	overflow-y: scroll;
+}
+
+.myjobPickList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 5px 15px;
+}
+
+.myjobPickList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.myjobPickTable
+{
+	width: 100%;
+}
+
+.myjobPickTdIcon
+{
+	width: 30px;
+	position: relative;
+}
+
+.myjobPickIconChoose
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+}
+
+.myjobPickIconChoose label
+{
+	display: block;
+}
+
+.myjobPickIconChoose input[type="checkbox"]
+{
+	background: white;
+	border: 1px solid #434343;
+	border-radius: 999rem;
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.myjobPickIconChoose input[type="checkbox"]:checked
+{
+	background: #FFD9EB;
+	border: 1px solid #FFD9EB;
+}
+
+.myjobPickIconChoose input[type="checkbox"]::after
+{
+	border: solid #EA76AC;
+	content: '';
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 6px;
+	width: 7px;
+	height: 16px;	
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	display: none;
+}
+
+.myjobPickIconChoose input[type="checkbox"]:checked::after
+{
+	display: block;
+}
+
+.myjobPickTdPic
+{
+	width: 54px;
+	height: 54px;
+	padding: 0 0 0 30px;
+}
+
+.myjobPickTdPic .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+	right: -5px;
+}
+
+.myjobPickTdName
+{
+	width: calc(100% - 34px);
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.myjobPickTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+/*****     會員中心     *****/
+.centerBox
+{
+	width: 100%;
+	min-height: calc(100vh - 80px);
+	padding: 0 0 80px 0;
+}
+
+.centerProfileBox
+{
+	background: linear-gradient(75deg, #FCBCDA 0%,#D7D5F6 100%);
+	width: calc(100% - 30px);
+	padding: 30px 15px 70px 15px;
+	position: relative;
+}
+
+.centerProfileBox.active
+{
+	padding: 30px 15px 95px 15px;
+}
+
+.Boss .centerProfileBox
+{
+	background: linear-gradient(75deg, #B3E4E9 0%,#D7D5F6 100%);
+}
+
+.centerProfileTable
+{
+	width: 100%;
+}
+
+.centerProfilePic
+{
+	width: 70px;
+	height: 70px;
+}
+
+.centerBox .selfieStatus
+{
+	width: 14px;
+	height: 14px;
+	top: -7px;
+	right: -7px;
+}
+
+.centerProfileData
+{
+	position: relative;
+	font-size: 14px;
+	padding: 0 50px 0 15px;
+}
+
+.centerProfileData a
+{
+	color: #434343;
+	display: inline-block;
+	word-break: break-all;
+}
+
+.centerProfileKind
+{
+	color: #BF97FF;
+	background: white;
+	border: 1px solid #BF97FF;
+	display: inline-block;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 0 9px;
+}
+
+.Boss .centerProfileKind
+{
+	color: #6E95FF;
+	border: 1px solid #6E95FF;
+}
+
+.centerProfileDecro
+{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.centerProfileSetting
+{
+	text-align: right;
+}
+
+.centerProfileSetting a
+{
+	color: #EA76AC;
+	background: white;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+	text-align: center;
+	border-radius: 999rem;
+	display: inline-block;
+	width: 54px;
+	height: 54px;
+	line-height: 54px;
+	font-size: 22px;
+}
+
+.Boss .centerProfileSetting a
+{
+	color: #7455A4;
+}
+
+.centerProfileSub
+{
+	background: white;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+	text-align: center;
+	border-radius: 20px;
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	position: absolute;
+	bottom: -40px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 2;
+}
+
+.centerProfileSub.active
+{
+	bottom: -54px;
+}
+
+.centerProfileSubSwitch
+{
+	background: #EA76AC;
+	border-radius: 20px 20px 0 0;
+	width: 100%;
+}
+
+.Boss .centerProfileSubSwitch
+{
+	background: #7455A4;
+}
+
+.centerProfileSubSwitchBtn
+{
+	color: white;
+	font-size: 16px;
+	display: block;
+	padding: 8px 0;
+}
+
+.centerProfileSubMenu
+{
+	width: calc(100%/3);
+}
+
+.centerProfileSubMenu:not(:last-child) .centerProfileSubMenuBtn
+{
+	position: relative;
+}
+
+.centerProfileSubMenu:not(:last-child) .centerProfileSubMenuBtn::after
+{
+	background: #E4E4E4;
+	width: 1px;
+	height: 60%;
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+.centerProfileSubMenuBtn
+{
+	display: block;
+	width: 100%;
+	padding: 15px 0;
+}
+
+.centerProfileSubLeft
+{
+	display: inline-block;
+}
+
+.centerProfileSubTit
+{
+	color: #434343;
+	font-size: 14px;
+	margin: 0 0 10px 0;
+}
+
+.centerProfileSubTxt
+{
+	color: #434343;
+	font-size: 14px;
+	width: 100%;
+	word-break: break-all;
+}
+
+.centerProfileSubTxt .active , .centerProfileSubForm
+{
+	color: #EA76AC;
+}
+
+.Boss .centerProfileSubTxt .active
+{
+	color: #7455A4;
+}
+
+.centerProfileSubTxt .disable
+{
+	color: #BEBEBE;
+}
+
+.centerProfileSubTxt i
+{
+	color: #EA76AC;
+	font-size: 20px;
+}
+
+.Boss .centerProfileSubTxt i
+{
+	color: #7455A4;
+}
+
+.centerProfileSubMenuBtnGo
+{
+	color: #434343;
+	margin: 0 0 0 10px;
+}
+
+/*     選單     */
+.centerMenuBox , .centerMenuTable
+{
+	width: 100%;
+}
+
+.centerMenuBox
+{
+	padding: 80px 0 0 0;
+}
+
+.centerMenuTable
+{
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	text-align: center;
+	border-radius: 20px;
+	margin: 0 15px;
+	width: calc(100% - 30px);
+}
+
+.centerMenuTable > tbody > tr > td
+{
+	padding: 20px 5px;
+}
+
+.centerMenuBtn
+{
+	display: block;
+}
+
+.centerMenuBtnIcon
+{
+	color: #EA76AC;
+	font-size: 30px;
+	margin: 0 0 5px 0;
+	position: relative;
+}
+
+.Boss .centerMenuBtnIcon
+{
+	color: #7455A4;
+}
+
+.centerMenuBtnNotify
+{
+	background: #EB4545;
+	color: white;
+	font-size: 12px;
+	min-width: 15px;
+	height: 16px;
+	border-radius: 999rem;
+	position: absolute;
+	top: -5px;
+	left: calc(50% + 25px);
+	transform: translateX(-50%);
+	padding: 0 3px;
+}
+
+.centerMenuBtnTit
+{
+	color: black;
+	font-size: 14px;
+	width: 100%;
+}
+
+/*     狀態     */
+.centerStatusBox
+{
+	width: 100%;
+	text-align: center;
+	margin: 0 0 40px 0;
+}
+
+.centerStatusTable
+{
+	width: calc(100% - 20px);
+	margin: 0 auto;
+	border-collapse: separate;
+	border-spacing: 10px 0;
+}
+
+.centerStatusTdBtn
+{
+	background: white;	
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	border-radius: 999rem;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.centerStatusTdBtn.active
+{
+	border: 1px solid #BF97FF;
+}
+
+.centerStatusBtnTxt
+{
+	color: #7455A4;
+	padding: 14px 5px;
+}
+
+.centerBtnBox
+{
+	width: 330px;
+	margin: 0 calc(50% - 165px);
+}
+
+/*****     好友名單     *****/
+.friendBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.friendKindBox
+{
+	width: 100%;
+}
+
+.friendKindBox:not(:last-child)
+{
+	margin: 0 0 30px 0;
+}
+
+.friendKindTitle
+{
+	color: #434343;
+	font-size: 14px;
+	padding: 0 15px;
+	width: calc(100% - 30px);
+	margin: 0 0 10px 0;
+}
+
+.friendListBox
+{
+	width: 100%;
+}
+
+.friendList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 5px 15px;
+}
+
+.friendList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.friendListBox
+{
+	width: 100%;
+}
+
+.friendTable
+{
+	width: 100%;
+}
+
+.friendTdPic
+{
+	width: 54px;
+	height: 54px;
+}
+
+.friendTdPic .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+	right: -5px;
+}
+
+.friendTdName
+{
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.friendTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+.friendTdDecro , .friendTdDecro a
+{
+	color: #434343;
+}
+
+.friendTdDecro
+{
+	text-align: right;
+	font-size: 14px;
+}
+
+.friendTdDecro a
+{
+	width: 20px;
+	height: 54px;
+	line-height: 54px;
+	display: block;
+}
+
+.friendTdBtnBox
+{
+	min-width: 115px;
+	font-size: 18px;
+	text-align: right;
+}
+
+.friendTdBtn
+{
+	color: white;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 4px;
+	border-radius: 3px;
+	min-width: 24px;
+	text-align: center;
+}
+
+.friendTdBtn:not(:last-child)
+{
+	margin: 0 5px 0 0;
+}
+
+/*****     好友名單-編輯     *****/
+.friendUptBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.friendUptList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 5px 15px;
+}
+
+.friendUptList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.friendUptTable
+{
+	width: 100%;
+}
+
+.friendUptTdPic
+{
+	width: 54px;
+	height: 54px;
+}
+
+.friendUptTdPic .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+	right: -5px;
+}
+
+.friendUptTdIcon
+{
+	color: #EB4545;
+	width: 24px;
+	font-size: 24px;
+	padding: 0 30px 0 0;
+}
+
+.friendUptTdName
+{
+	width: calc(100% - 34px);
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.friendUptTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+/*****     帳戶紀錄     *****/
+.accountRecordBox
+{
+	width: 100%;
+}
+
+.accountRecordBlock
+{
+	width: 100%;
+}
+
+.accountRecordBlockTopic
+{
+	width: 100%;
+}
+
+.accountRecordBlockTopicTxt
+{
+	color: #434343;
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px 15px 5px 15px;
+}
+
+.accountRecordBlockListBox
+{
+	background: white;
+	width: 100%;
+}
+
+.accountRecordBlockList
+{
+	width: 100%;
+	display: block;
+}
+
+.accountRecordBlockListTable
+{
+	width: 100%;
+}
+
+.accountRecordBlockList
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.accountRecordBlockList:last-child
+{
+	border-bottom: 1px solid #BEBEBE;
+}
+
+.accountRecordBlockListTdTit
+{
+	width: calc(100% - 20px);
+	padding: 0 0 0 15px;
+}
+
+.accountRecordBlockListTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	padding: 15px 0;
+}
+
+.accountRecordBlockListTdDecro
+{
+	color: #434343;
+	padding: 0 15px 0 0;
+	width: 20px;
+	text-align: right;
+	font-size: 12px;
+}
+
+/*****     購買紀錄     *****/
+.rechargeListBox
+{
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	padding: 10px 0 0 0;
+}
+
+.rechargeListSearchBox
+{
+	width: 100%;
+	margin: 0 0 15px 0;
+}
+
+/*****     返點紀錄     *****/
+.rechargeRecordBox
+{
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	padding: 10px 0 0 0;
+}
+
+.rechargeRecordSearchBox
+{
+	width: 100%;
+	margin: 0 0 15px 0;
+}
+
+/*****     歸屬下線     *****/
+.downlineListBox
+{
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	padding: 10px 0 0 0;
+}
+
+.downlineListSearchBox
+{
+	width: 100%;
+	margin: 0 0 15px 0;
+}
+
+.downlineListKind
+{
+	font-size: 12px;
+}
+
+.downlineListKind:not(:last-child)
+{
+	margin: 0 0 5px 0;
+}
+
+.downlineListRole
+{
+	border-radius: 5px;
+	display: inline-block;
+	padding: 1px 5px;
+	min-width: 30px;
+	font-size: 12px;
+	margin: 0 5px 0 0;
+}
+
+.downlineListRole.boss
+{
+	border: 1px solid #6E95FF;
+	color: #6E95FF;
+}
+
+.downlineListRole.staff
+{
+	border: 1px solid #BF97FF;
+	color: #BF97FF;
+}
+
+/*****     返點紀錄     *****/
+.transactionRecordBox
+{
+	width: 100%;
+}
+
+.transactionRecordSearchBox
+{
+	width: calc(100% - 30px);
+	margin: 0 auto 15px auto;
+}
+
+.transactionRecordKindBtnBox
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%);
+	width: 100%;
+	padding: 11px 0;
+	text-align: center;
+	margin: 0 0 10px 0;
+}
+
+.transactionRecordKindBtn
+{
+	background: white;
+	color: #7455A4;
+	border: 1px solid #BF97FF;
+	width: 75px;
+	padding: 5px;
+	font-size: 14px;
+	border-radius: 5px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.transactionRecordKindBtn:not(:last-child)
+{
+	margin: 0 5px 0 0;
+}
+
+.transactionRecordKindBtn.active
+{
+	background: #BF97FF;
+	color: white;
+}
+
+.transactionRecordBox .FormBox
+{
+	width: calc(100% - 30px);
+	margin: 0 auto;
+}
+
+/*****     轉帳     *****/
+.transferBox
+{
+	width: 100%;
+	padding: 10px 0 0 0;
+}
+
+/*****     轉帳-選擇好友     *****/
+.transferChooseBox
+{
+	padding: 10px 0 0 0;
+}
+
+.transferChooseTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: calc(100% - 15px);
+	padding: 0 0 0 15px;
+}
+
+.transferChooseBlock
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.transferChooseList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 5px 15px;
+}
+
+.transferChooseList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.transferChooseTable
+{
+	width: 100%;
+}
+
+.transferChooseTdIcon
+{
+	width: 30px;
+	padding: 0 30px 0 0;
+	position: relative;
+}
+
+.transferChooseIconChoose
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+}
+
+.transferChooseIconChoose label
+{
+	display: block;
+}
+
+.transferChooseIconChoose input[type="radio"]
+{
+	background: white;
+	border: 1px solid #434343;
+	border-radius: 999rem;
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.transferChooseIconChoose input[type="radio"]:checked
+{
+	background: #FFD9EB;
+	border: 1px solid #FFD9EB;
+}
+
+.transferChooseIconChoose input[type="radio"]::after
+{
+	border: solid #EA76AC;
+	content: '';
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 6px;
+	width: 7px;
+	height: 16px;	
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	display: none;
+}
+
+.transferChooseIconChoose input[type="radio"]:checked::after
+{
+	display: block;
+}
+
+.transferChooseTdPic
+{
+	width: 54px;
+	height: 54px;
+}
+
+.transferChooseTdPic .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+	right: -5px;
+}
+
+.transferChooseTdName
+{
+	width: calc(100% - 34px);
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.transferChooseTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+/*****     提領     *****/
+.withdrawalBox
+{
+	width: 100%;
+	padding: 10px 0 0 0;
+}
+
+.withdrawalBox .MoneyActBox
+{
+	padding: 30px 0 25px 0;
+}
+
+.withdrawalSelTdPick
+{
+	position: relative;
+	width: 30px;
+	padding: 0 5px;
+	text-align: center;
+}
+
+.withdrawalSelPick
+{
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 1;
+}
+
+.withdrawalSelPick label
+{
+	display: block;
+}
+
+.withdrawalSelPick input[type="radio"]
+{
+	background: white;
+	border: 1px solid #BEBEBE;
+	border-radius: 3px;
+	width: 16px;
+	height: 16px;
+	position: relative;
+}
+
+.withdrawalSelPick input[type="radio"]:checked
+{
+	background: #FFD9EB;
+	border: 1px solid #FFD9EB;
+}
+
+.withdrawalSelPick input[type="radio"]::after
+{
+	border: solid #EA76AC;
+	content: '';
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 3px;
+	width: 3px;
+	height: 8px;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	display: none;
+}
+
+.withdrawalSelPick input[type="radio"]:checked::after
+{
+	display: block;
+}
+
+.withdrawalSelTdInf
+{
+	padding: 7px 0;
+}
+
+.withdrawalSelInfName
+{
+	color: #7455A4;
+	font-size: 14px;
+	margin: 0 0 3px 0;
+}
+
+.withdrawalSelInfTxt
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+/*****     聊天群組     *****/
+.chatGroupBox
+{
+	width: 100%;
+	margin: 10px 0 20px 0;
+}
+
+.chatGroupList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 7px 15px;
+}
+
+.chatGroupList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.chatGroupTable
+{
+	width: 100%;
+}
+
+.chatGroupTdPic
+{
+	width: 54px;
+	height: 54px;
+}
+
+.chatGroupFolder
+{
+	background: white;
+	border: 1px solid #E4E4E4;
+	border-radius: 5px;
+	width: 51px;
+	height: 51px;
+	padding: 2px;
+	position: relative;
+}
+
+.chatGroupFolderTable
+{
+	width: 100%;
+}
+
+.chatGroupFolderPic , .chatGroupFolderPic img
+{
+	width: 100%;
+	border-radius: 5px;
+}
+
+.chatGroupFolderNotice
+{
+	background: #EB4545;
+	color: white;
+	font-size: 12px;
+	display: inline-block;
+	border-radius: 999rem;
+	position: absolute;
+	top: -5px;
+	right: -10px;
+	padding: 1px 6px;
+}
+
+.chatGroupTdName
+{
+	width: calc(100% - 54px);
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.chatGroupTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+.chatGroupBtnBox
+{
+	width: 100%;
+}
+
+.chatGroupBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;
+	display: block;
+	font-size: 14px;
+	padding: 15px 0;
+	width: 100%;
+	text-align: center;
+}
+
+/*****     聊天群組-新增     *****/
+.chatGroupAdd .infData
+{
+	margin: 10px 0 30px 0;
+}
+
+.chatGroupAddTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: calc(100% - 15px);
+	padding: 0 0 0 15px;
+}
+
+.chatGroupAddBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.chatGroupAddList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 5px 15px;
+}
+
+.chatGroupAddList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.chatGroupAddTable
+{
+	width: 100%;
+}
+
+.chatGroupAddTdIcon
+{
+	width: 30px;
+	padding: 0 30px 0 0;
+	position: relative;
+}
+
+.chatGroupAddIconChoose
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+}
+
+.chatGroupAddIconChoose label
+{
+	display: block;
+}
+
+.chatGroupAddIconChoose input[type="checkbox"]
+{
+	background: white;
+	border: 1px solid #434343;
+	border-radius: 999rem;
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.chatGroupAddIconChoose input[type="checkbox"]:checked
+{
+	background: #FFD9EB;
+	border: 1px solid #FFD9EB;
+}
+
+.chatGroupAddIconChoose input[type="checkbox"]::after
+{
+	border: solid #EA76AC;
+	content: '';
+	position: absolute;
+	left: calc(50% - 1px);
+	top: 6px;
+	width: 7px;
+	height: 16px;	
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg) translateX(-50%);
+	-ms-transform: rotate(45deg) translateX(-50%);
+	transform: rotate(45deg) translateX(-50%);
+	display: none;
+}
+
+.chatGroupAddIconChoose input[type="checkbox"]:checked::after
+{
+	display: block;
+}
+
+.chatGroupAddTdPic
+{
+	width: 54px;
+	height: 54px;
+}
+
+.chatGroupAddTdPic .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+	right: -5px;
+}
+
+.chatGroupAddTdName
+{
+	width: calc(100% - 34px);
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.chatGroupAddTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+/*****     群組     *****/
+.chatBox
+{
+	background: white;
+	width: calc(100% - 30px);
+	padding: 0 15px 30px 15px;
+	min-height: calc(100vh - 152px);
+}
+
+.chatBtnEdit
+{
+	color: #686868;
+	font-size: 25px;
+}
+
+.chatBox .JobListChatBox
+{
+	padding: 20px 0 0 0;
+}
+
+.chatBox .serviceList.other .serviceListImg img
+{
+	border: 1px solid #E4E4E4;
+}
+
+.chatBox .serviceList.AdmMsg .serviceListMsgBox
+{
+	background: #E4E4E4;
+}
+
+.chatBox .serviceList.AdmMsg .serviceListMsgBox::after
+{
+	border-color: transparent #E4E4E4 transparent transparent;
+}
+
+.chatBox .serviceList.UserMsg.self .serviceListMsgBox
+{
+	background: #FFD9EB;
+}
+
+.chatBox .serviceList.UserMsg.self .serviceListMsgBox::after
+{
+	border-color: transparent transparent transparent #FFD9EB;
+}
+
+.chatBox .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+    	right: 9px;
+}
+
+.chatBox .UserMsg .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+    	right: -5px;
+}
+
+.chatBox .myjobIptTdBtn
+{
+	padding: 0 0 0 10px;
+}
+
+/*****     編輯群組     *****/
+.chatGroupUptBox
+{
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	background: white;
+	width: calc(100% - 30px);
+	padding: 0 15px;
+	margin: 10px 0 15px 0;
+}
+
+.chatGroupUptTable
+{
+	width: calc(100% + 40px);
+	border-collapse: separate;
+	border-spacing: 20px 30px;
+	margin: 0 0 0 -20px;
+}
+
+.chatGroupUptTable > tbody > tr > td
+{
+	width: 20%;
+	vertical-align: top;
+}
+
+.chatGroupUptUserBtn
+{
+	display: block;	
+	margin: 0 auto;
+}
+
+.chatGroupUptUserBtn , .chatGroupUptUserBtn img
+{
+	width: 50px;
+	height: 50px;
+}
+
+.chatGroupUptName
+{
+	color: #686868;
+	font-size: 12px;
+	width: 100%;
+	word-break: break-all;
+}
+
+.chatGroupUptAddUser
+{
+	color: #EA76AC;
+	background: #FFD9EB;
+	border: 1px solid #E4E4E4;
+	font-size: 40px;
+	border-radius: 5px;
+	display: block;
+	width: 54px;
+	height: 54px;
+	text-align: center;
+	position: relative;
+}
+
+.chatGroupUptAddUser span
+{
+	position: absolute;
+	top: calc(50% - 5px);
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.chatGroupUptSeeBox
+{
+	width: 100%;
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+
+.chatGroupUptSeeBtn
+{
+	color: #7455A4;
+	font-size: 14px;
+	display: inline-block;
+}
+
+.chatGroupUptDontknow
+{
+	color: #434343;
+	font-size: 14px;
+	float: left;
+}
+
+.chatGroupUptBtnBox
+{
+	width: 100%;
+	text-align: center;
+}
+
+.chatGroupUptBtn
+{
+	background: #EB4545;
+	color: white;
+	width: 100%;
+	font-size: 14px;
+	padding: 15px 0;
+}
+
+.chatGroupUptBtn:first-child
+{
+	margin: 0 0 5px 0;
+}
+
+/*****     刊登工作     *****/
+.mypostJobBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.mypostJobMenuBox
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%);
+	width: calc(100% - 30px);
+	padding: 8px 15px;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+.mypostJobMenuBtn
+{
+	color: #7455A4;
+	background: white;
+	border: 1px solid #BF97FF;
+	min-width: 79px;
+	padding: 5px 3px;
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	word-break: break-all;
+}
+
+.mypostJobMenuBtn:not(:last-child)
+{
+	margin: 0 10px 0 0;
+}
+
+.mypostJobMenuBtn.active
+{
+	background: #BF97FF;
+	color: white;
+}
+
+.mypostJob .JobListDate
+{
+	border-bottom: 0;
+	padding: 0;
+}
+
+.mypostJob .JobListBtnViewBox
+{
+	border-top: 1px solid #BEBEBE;
+	margin: 10px 0 0 0;
+}
+
+.mypostJob .JobListCommentsBox.active + .JobListBtnViewBox
+{
+	border: 0;
+}
+
+.mypostJob .JobListBtnViewBox
+{
+	padding: 15px 0;
+}
+
+/*     新增     */
+.postJobBox
+{
+	width: 100%;
+	padding: 0 0 80px 0;
+	margin: 10px 0 0 0;
+}
+
+/* .postJobBox.active
+{
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 104px;
+	z-index: 10000;
+	height: calc(100vh - 104px);
+} */
+
+.postJobBox .EmojiImgBox
+{
+	position: unset;
+	margin: 0 0 20px 0;
+}
+
+.postJobKindBox
+{
+	width: calc(100% - 30px);
+	margin: 0 auto 10px auto;
+}
+
+.postJobKindBtn
+{
+	border: 1px solid #BF97FF;
+	background: white;
+	color: #7455A4;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 5px;
+	display: inline-block;
+	min-width: 75px;
+	padding: 5px;
+	position: relative;
+}
+
+.postJobKindBtn:not(:last-child)
+{
+	margin: 0 16px 0 0;
+}
+
+.postJobKindBtn.active
+{
+	color: white;
+	background: #BF97FF;
+}
+
+.postJobKindBtn input
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+.postJob
+{
+	width: 100%;
+	margin: 0 0 10px 0;
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+
+.postJobTit , .postJobMsg
+{
+	background: white;
+	border-top: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	vertical-align: top;
+}
+
+.postJobTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: 100px;
+	padding: 15px 0 15px 15px;
+}
+
+.postJobMsg
+{
+	width: calc(100% - 100px);
+	padding: 15px 15px 15px 0;
+	position: relative;
+}
+
+.postJobBox .Ipt input , .postJobBox .Sel select
+{
+	min-height: 17px;
+}
+
+.postJobTypeBtnBox
+{
+	width: 100%;
+	word-break: break-all;
+}
+
+.postJobTypeBtn
+{
+	text-align: center;
+	min-width: 75px;
+	display: inline-block;
+	margin: 0 5px 5px 0;
+}
+
+.postJobTypeBtn:not(:last-child)
+{
+	margin: 0 5px 5px 0;
+}
+
+.postJobTypeBtn label
+{
+	display: inline-block;
+	width: 100%;
+}
+
+.postJobTypeBtn input[type="checkbox"]
+{
+	display: none;
+}
+
+.postJobTypeBtnText
+{
+	border: 1px solid #BF97FF;
+	background: white;
+	color: #7455A4;
+	font-size: 14px;
+	border-radius: 5px;
+	width: calc(100% - 10px);
+	padding: 5px;
+}
+
+.postJobTypeBtn input[type="checkbox"]:checked + .postJobTypeBtnText
+{
+	background: #7455A4;
+	color: white;
+}
+
+.postJobMsg .Textarea textarea
+{
+	padding: 0;
+	min-height: 200px;
+	word-break: break-all;
+}
+
+.postJobBlock
+{
+	width: 100%;
+	margin: 0 0 140px 0;
+}
+
+.postJobImgTit
+{
+	color: #7455A4;
+	font-size: 14px;
+	width: calc(100% - 15px);
+	padding: 0 0 0 15px;
+	margin: 0 0 10px 0;
+}
+
+.postJobMsgContent
+{
+	height: 200px;
+	overflow-y: scroll;
+	width: calc(100% - 7px);
+	padding: 5px 0 5px 5px;
+	margin: 0 0 20px 0;
+	font-size: 13px;
+}
+
+.postJobBox .EmojiContentInput
+{
+	width: calc(100% - 25px);
+	max-width: calc(100% - 25px);
+}
+
+.postJobBox .EmojiBox
+{
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    z-index: unset;
+    text-align: right;
+}
+
+.postJobBox .EmojiBtnSwitch 
+{
+	display: inline-block;
+}
+
+/* .postJobBox .EmojiImgBox
+{
+	border-top: 0;
+	margin: -10px 0 0 0;
+} */
+
+.postJobBtnBox
+{
+	width: calc(100% - 100px);
+	padding: 0 50px;
+}
+
+/*****     工作紀錄     *****/
+.jodRecordBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+/*****     查看工作評論     *****/
+.jobComments
+{}
+
+/*****     推廣連結     *****/
+.promotionBox
+{
+	background: linear-gradient(75deg, #FCBCDA 0%,#D7D5F6 100%);
+	width: calc(100% - 30px);
+	padding: 30px 15px 70px 15px;
+	position: relative;
+}
+
+.Boss .promotionBox
+{
+	background: linear-gradient(75deg, #B3E4E9 0%,#D7D5F6 100%);
+}
+
+.promotionTable
+{
+	width: 100%;
+}
+
+.promotionPic
+{
+	width: 70px;
+	height: 70px;
+}
+
+.promotion .selfieStatus
+{
+	width: 14px;
+	height: 14px;
+	top: -7px;
+	right: -7px;
+}
+
+.promotionData
+{
+	position: relative;
+	font-size: 14px;
+	padding: 0 15px;
+}
+
+.promotionKind
+{
+	color: #BF97FF;
+	background: white;
+	border: 1px solid #BF97FF;
+	display: inline-block;
+	border-radius: 5px;
+	font-size: 12px;
+	padding: 0 9px;
+}
+
+.promotionData a
+{
+	color: #434343;
+	display: inline-block;
+}
+
+.promotionQrBox
+{
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 130px;
+}
+
+.promotionQrInner
+{
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	border-radius: 20px;
+	width: calc(100% - 60px);
+	margin: 0 15px;
+	padding: 15px;
+}
+
+.promotionQrImg
+{
+	width: 100%;
+}
+
+.promotionQrImg img
+{
+	width: 100%;
+}
+
+.promotionBox .BtnActBox
+{}
+
+/*****     搜尋會員     *****/
+.findBox
+{
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+
+.findList
+{
+	background: white;
+	border-bottom: 1px solid #BEBEBE;
+	display: block;
+	width: calc(100% - 30px);
+	padding: 5px 15px;
+}
+
+.findList:first-child
+{
+	border-top: 1px solid #BEBEBE;
+}
+
+.findTable
+{
+	width: 100%;
+}
+
+.findTdPic , .findTdPic img
+{
+	width: 54px;
+	height: 54px;
+}
+
+.findTdPic .selfieStatus
+{
+	width: 10px;
+	height: 10px;
+	top: -5px;
+	right: -5px;
+}
+
+.findTdName
+{
+	width: calc(100% - 75px);
+	padding: 0 10px;
+	word-break: break-all;
+}
+
+.findTdName div
+{
+	color: #434343;
+	font-size: 14px;
+}
+
+.findTdDecro
+{
+	text-align: right;
+	font-size: 14px;
+	width: 20px;
+}
+
+.findTdDecro a
+{
+	color: #434343;
+	width: 20px;
+	height: 54px;
+	line-height: 54px;
+	display: block;
+}
+
+/*****     客服     *****/
+.serviceBox
+{
+	padding: 20px 0 0 0;
+}
+
+/*****     Footer     *****/
+footer
+{
+	background: linear-gradient(to right, #FCBCDA 0%,#D7D5F6 100%);
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	z-index: 10;
+}
+
+.Boss footer
+{
+	background: linear-gradient(to right, #B3E4E9 0%,#D7D5F6 100%);
+}
+
+.footerContainer
+{
+	width: 100%;
+	text-align: center;
+}
+
+.footerContainer td
+{
+	width: 20%;	
+	padding: 0;
+}
+
+.footerA
+{
+	display: block;
+	width: 100%;
+	padding: 4px 0;
+	position: relative;
+}
+
+.footerMsg
+{
+	background: #EB4545;
+	color: white;
+	display: inline-block;
+	padding: 1px 5px;
+	border-radius: 999rem;
+	position: absolute;
+	font-size: 12px;
+	top: 2px;
+	left: calc(50% + 24px);
+	transform: translateX(-50%) scale(0.85);
+}
+
+.footerIcon
+{
+	color: #686868;
+	font-size: 27px;
+}
+
+.footerContainer td.active .footerIcon
+{
+	color: #7455A4;
+}
+
+.footerTit
+{
+	color: #686868;
+	font-size: 12px;
+}
+
+.footerContainer td.active .footerTit
+{
+	color: #7455A4;
+}

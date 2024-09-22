@@ -1,0 +1,312 @@
+/*     客服聊天室     */
+.serviceBox
+{
+	width: 100%;
+	padding: 0 0 80px 0;
+	position: relative;
+}
+
+.serviceChatBox
+{
+	width: 100%;
+}
+
+.serviceDate
+{
+	text-align: center;
+	width: 100%;
+	margin: 0 0 15px 0;
+}
+
+.serviceDateDecro
+{
+	height: 1px;
+	width: calc(50% - 45px);
+}
+
+.serviceDateDecroInner
+{
+	background: #cacaca;
+	width: 100%;
+	height: 1px;
+}
+
+.serviceDateTime
+{
+	color: #888888;
+	width: 80px;
+	padding: 0 5px;
+	font-size: 13px;
+}
+
+.serviceList
+{
+	width: calc(100% - 55px);
+}
+
+.serviceList:not(:last-child)
+{
+	margin-bottom: 15px;
+}
+
+.serviceList.UserMsg
+{
+	margin-left: 55px;
+}
+
+.serviceListInf , .serviceListTdImg 
+{
+	vertical-align: top !important;
+}
+
+.serviceListTdImg , .serviceListImg , .serviceListImg img
+{
+	width: 40px;
+	height: 40px;
+}
+
+.serviceListTdImg 
+{
+	padding: 0 15px 0 0;
+	position: relative;	
+}
+
+.serviceListImg , .serviceListImg img
+{
+	display: block;
+	width: 100%;
+}
+
+.serviceList.UserMsg .serviceListTdImg
+{
+	padding: 0 0 0 15px;
+}
+
+.serviceListImg
+{
+	border: 1px solid #7455A4;
+	width: 100%;
+	border-radius: 5px;
+}
+
+.serviceList.UserMsg .serviceListImg
+{
+	border: 1px solid #E4E4E4;
+}
+
+.serviceListInf
+{
+	width: calc(100% - 55px);
+}
+
+.serviceListName
+{
+	font-size: 12px;
+	margin: 0 0 2px 0;
+}
+
+.serviceListNameTxt
+{
+	color: #686868;
+}
+
+.serviceList.UserMsg .serviceListNameTxt
+{
+	text-align: right;
+}
+
+.serviceListBot
+{
+	width: 100%;
+}
+
+.serviceList.UserMsg .serviceListBot
+{
+	text-align: right;
+}
+
+/* .serviceListMsgBox , .serviceListTime
+{
+	display: inline-block;
+	vertical-align: bottom;
+} */
+
+.serviceListMsgBox
+{
+	/* filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3)); */
+	display: inline-block;
+	max-width: calc(100% - 10px);
+	padding: 6px 8px;
+	border-radius: 5px;
+	position: relative;
+	margin: 0 0 5px 0;
+}
+
+.serviceList.AdmMsg .serviceListMsgBox
+{
+	background: #FFD9EB;
+	/* margin: 0 5px 0 0; */
+}
+
+.chat .serviceList.AdmMsg .serviceListMsgBox
+{
+	background: #E4E4E4;
+}
+
+.serviceList.UserMsg .serviceListMsgBox
+{
+	background: #E4E4E4;
+	/* margin: 0 0 0 5px; */
+}
+
+.serviceList.UserMsg.self .serviceListMsgBox
+{
+	background: #E5D4FF;
+	/* margin: 0 0 0 5px; */
+}
+
+.chat .serviceList.UserMsg.self .serviceListMsgBox
+{
+	background: #FFD9EB;
+}
+
+.serviceListMsgBox::after
+{
+	width: 0;
+	height: 0;
+	content: '';
+	position: absolute;	
+	border-style: solid;
+	z-index: 2;
+	top: 7px;
+}
+
+.serviceList.AdmMsg .serviceListMsgBox::after
+{
+	border-color: transparent #FFD9EB transparent transparent;
+	border-width: 5px 8px 5px 0;	
+	left: -6px;
+}
+
+.chat .serviceList.AdmMsg .serviceListMsgBox::after
+{
+	border-color: transparent #E4E4E4 transparent transparent;
+}
+
+.serviceList.UserMsg .serviceListMsgBox::after
+{
+	border-color: transparent transparent transparent #E4E4E4;
+	border-width: 5px 0 5px 8px;
+	right: -6px;
+}
+
+.serviceList.UserMsg.self .serviceListMsgBox::after
+{
+	border-color: transparent transparent transparent #E5D4FF;
+	border-width: 5px 0 5px 8px;
+	right: -6px;
+}
+
+.chat .serviceList.UserMsg.self .serviceListMsgBox::after
+{
+	border-color: transparent transparent transparent #FFD9EB;
+}
+
+.serviceListMsgBox img
+{
+	width: auto;
+	max-width: 100%;
+}
+
+.serviceListMsgBox img:not(.EmojiImgIcon):not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+.serviceListMsg
+{
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.serviceList.AdmMsg .serviceListMsg
+{
+	color: #434343;
+}
+
+.serviceList.UserMsg .serviceListMsg
+{
+	color: #434343;
+}
+
+.serviceListTime
+{
+	width: 100%;
+	position: relative;
+	min-height: 16px;
+}
+
+.serviceListTimeTxt
+{
+	color: #434343;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-size: 12px;
+}
+
+.serviceList.UserMsg .serviceListTimeTxt
+{
+	right: 0;
+}
+
+.serviceActBox
+{
+	background: white;
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.16);
+	width: calc(100% - 30px);
+	padding: 10px 15px;
+	position: fixed;
+	bottom: 59px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.serviceActText
+{
+	width: calc(100% - 60px);
+	padding: 0 15px 0 0;
+}
+
+.serviceActText textarea
+{
+	color: #333333;
+	padding: 7px 7px 0 7px;
+	border-radius: 5px;
+	width: 100%;
+	min-height: 60px;
+	display: block;
+}
+
+.serviceActText textarea::placeholder
+{
+	color: #666666;
+	font-size: 12px;
+}
+
+.serviceActBtn
+{
+	background: #E4E4E4;
+	border-radius: 5px;
+	text-align: center;
+	width: 60px;
+}
+
+.serviceActBtnTxt
+{
+	color: white;
+	display: block;
+	width: 100%;
+	padding: 20px 0;
+	font-size: 14px;
+}

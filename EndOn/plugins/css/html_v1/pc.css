@@ -1,0 +1,1701 @@
+*
+{
+	font-family: 微軟正黑體;
+}
+
+html , body
+{
+	font-family: 微軟正黑體;
+	width: 100%;
+	margin: 0;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+body
+{
+	background: rgba(252,188,218,.55);
+	position: relative;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+img
+{
+	display: block;
+}
+
+button , select , input[type="radio"] , input[type="checkbox"] ,
+input[type="submit"] , label , a
+{
+	cursor: pointer;
+}
+
+input , button , select , textarea
+{
+	background: transparent;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+textarea
+{
+	padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+button , input[type="button"]
+{
+	-webkit-appearance: none !important;
+	-moz-appearance:none !important;
+	appearance: none !important;
+}
+
+input[type="number"]
+{
+	-moz-appearance:textfield;
+}
+
+input[type="number"] , input[type="text"] , input[type="password"] ,
+select
+{
+	min-height: 30px;
+}
+
+input[type="submit"] , input::placeholder
+{
+	font-size: 16px;
+}
+
+input[type="file"]
+{
+	font-size: 16px;
+	cursor: pointer;
+}
+
+table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+span
+{
+	vertical-align: middle;
+}
+
+/*****     共同     *****/
+.Notice
+{
+	color: red;
+	display: none;
+	font-size: 13px;
+	text-align: left;
+}
+
+.Notice.active
+{
+	display: block;
+}
+
+.NoData /* 沒有資料 */
+{
+	text-align: center;
+	font-size: 15px;
+}
+
+/*****     共同框架     *****/
+.ContentContainer
+{
+	color: #434343;
+	min-height: calc(100vh - 140px);
+	width: calc(100% - 310px);
+	margin: 0 0 0 250px;
+	padding: 30px 30px 50px 30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.ContentContainer.active
+{
+	width: calc(100% - 60px);
+	margin: 0;
+}
+
+/*     display:grid 4格     */
+.GridBlockBox
+{
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+}
+
+.GridBlock
+{
+	border: 1px solid rgba(255,255,255,0.5);
+	background: rgba(0,0,0,0.1);
+	padding: 10px;
+}
+
+.GridBlockTopic
+{
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+.GridBlockList
+{
+	width: 100%;
+	display: block;
+}
+
+.GridBlockList:not(:last-child)
+{
+	margin: 0 0 3px 0;
+}
+
+/*     搜尋     */
+.Search
+{
+	margin: 0 0 10px 0;
+}
+
+/*     純顯示資訊表格     */
+.Information
+{
+	width: 100%;
+}
+
+.InformationTit
+{
+	text-align: center;
+	width: calc(100% + 20px);
+	margin: 0 0 0 -10px;
+	font-size: 18px;
+	border-spacing: 10px 0;
+	border-collapse: separate;
+}
+
+.InformationTitCell
+{
+	background: #292929;
+	border-radius: 10px 10px 0 0;
+	padding: 10px 5px;
+}
+
+.InformationName
+{
+	color: white;	
+	width: 100%;	
+}
+
+.InformationScroll
+{
+	width: 100%;
+	overflow: auto;
+}
+
+.InformationTableBox
+{
+	width: 100%;
+}
+
+.InformationTableBox table
+{
+	width: 100%;
+	text-align: center;
+	table-layout: fixed;
+	word-break: break-all;
+}
+
+.InformationTableBox table , .InformationTableBox tbody:nth-child(2n-1) tr
+{
+	background: white !important;
+}
+
+.InformationTableBox thead , .InformationTableBox tbody , .InformationTableBox tr
+{
+	width: 100%;
+}
+
+.InformationTableBox th , .InformationTableBox td
+{
+	border: 1px solid #d6d6d6;
+	min-width: 56px;
+	padding: 10px 5px;
+}
+
+.InformationTableBox tbody tr:nth-child(2n-1)
+{
+	background: #ECECEC;
+}
+
+.InformationTableBox tr:hover
+{
+	background: rgba(0,0,0,0.1);
+}
+
+.InformationTableBox .Ipt , .InformationTableBox .Sel , .InformationTableBox .Textarea
+{
+	display: block;
+}
+
+.InformationTableBox .Ipt input , .InformationTableBox .Sel select , .InformationTableBox .Textarea textarea
+{
+	width: 100%;
+}
+
+.InformationTableBox img
+{
+	width: 100%;
+	display: inline-block;
+	margin: 0 0 -4px 0;
+	max-width: 150px;
+}
+
+/*     Information需要做切換資訊     */
+.Information.tab .InformationTitCell
+{
+	cursor: pointer;
+	opacity: 0.5;
+}
+
+.Information.tab .InformationTitCell.active
+{
+	opacity: 1;
+}
+
+.Information.tab .InformationTableBox
+{
+	display: none;
+}
+
+.Information.tab .InformationTableBox.active
+{
+	display: block;
+}
+
+/*     需點擊查看詳細     */
+.InformationTableBox.detail tbody tr:nth-child(2n-1)
+{
+	background: transparent;
+}
+
+.InformationTableBox.detail tbody:nth-child(2n-1)
+{
+	background: #ECECEC;
+}
+
+.InformationTableBox.detail tbody:hover
+{
+	background: rgba(0,0,0,0.1);
+}
+
+.DetailTr
+{
+	display: none;
+}
+
+.DetailTr.active
+{
+	display: table-row;
+}
+
+.DetailBoxTable
+{
+	background: #e2e2e2;
+	border-collapse: separate;
+	border-spacing: 1px;
+	width: 100%;
+}
+
+.DetailBoxTable > div > div > div
+{
+	background: #fafafa;
+	padding: 8px 5px;
+	vertical-align: top;
+	text-align: left;
+}
+
+.DetailBoxCell1
+{
+	width: 120px;
+	min-width: 120px;
+}
+
+.DetailBoxCell2
+{
+	width: calc(100% - 120px);
+}
+
+.DetailBoxCell2 .Ipt , .DetailBoxCell2 .Sel , .DetailBoxCell2 .Sel select ,
+.DetailBoxCell2 .Textarea , .DetailBoxCell2 .Textarea textarea
+{
+	width: 100%;
+}
+
+.DetailBoxCell2 .Ipt input[type="number"] , .DetailBoxCell2 .Ipt input[type="text"] , .DetailBoxCell2 .Ipt input[type="password"]
+{
+	min-width: 100%;
+}
+
+/*     區塊元素     */
+.Block
+{
+	width: 100%;
+}
+
+.BlockTit , .BlockTxt
+{
+	display: block;
+	width: 100%;
+}
+
+.Block .Textarea textarea
+{
+	min-width: 500px;
+	min-height: 150px;
+}
+
+.BlockImg
+{
+	width: 100%;
+}
+
+.BlockImg img
+{
+	width: auto;
+	max-width: 50%;
+}
+
+/*     行內區塊元素     */
+.InlineBlock
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.InlineBlockTit , .InlineBlockTxt
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.InlineBlockTit
+{
+	margin-right: 5px;
+}
+
+.InlineBlockImg
+{
+	display: inline-block;
+	width: 500px;
+}
+
+.InlineBlockImg img
+{
+	width: auto;
+	max-width: 100%;
+}
+
+/*     編輯頁面     */
+.EditBtnBox
+{
+	background: rgba(0,0,0,0.1);
+	padding: 20px 20px;
+	margin: 80px 0 0 0;
+	width: calc(100% - 40px);
+	text-align: right;
+}
+
+.EditBtn
+{
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	font-size: 18px;
+	padding: 6px 15px;
+}
+
+.EditBtn , .EditBtn.blue
+{
+	color: white;
+	background: #0d73ba;
+}
+
+.EditBtn.red
+{
+	color: white;
+	background: #c4272c;
+}
+
+.EditBtn:not(:last-child)
+{
+	margin: 0 15px 0 0;
+}
+
+.EditBtn:hover
+{
+	opacity: 0.9;
+}
+
+.BlockLine input[type="submit"] , .EditBtn input[type="submit"]
+{
+	opacity: 0;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.EditBtn i , .EditBtn span
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*****     共同零件     *****/
+/*     開關     */
+.SwitchHorizontal , .SwitchHorizontalSlider
+{
+	height: 30px;
+}
+
+.SwitchHorizontal
+{
+	position: relative;
+	display: inline-block;
+	min-width: 75px;
+}
+
+.SwitchHorizontal input[type="checkbox"]
+{
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+.SwitchHorizontalSlider
+{
+	background: #4D4D4D;
+	position: relative;
+	cursor: pointer;
+	/* top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0; */
+	-webkit-transition: .3s;
+	transition: 0.3s;
+	border-radius: 999rem;
+}
+
+.SwitchHorizontal input[type="checkbox"]:checked + .SwitchHorizontalSlider
+{
+	background: #59AD2F;
+}
+
+.SwitchHorizontalSlider:before
+{
+	background: white;
+	position: absolute;
+	content: "";
+	height: 22px;
+	width: 22px;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 4px;
+	border-radius: 50%;
+}
+
+.SwitchHorizontal input[type="checkbox"]:checked + .SwitchHorizontalSlider:before
+{
+	right: 4px;
+	left: unset;
+}
+
+.SwitchHorizontalTxt
+{
+	color: white;
+	width: calc(100% - 40px);
+	padding: 0 10px 0 30px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 16px;
+	z-index: 5;
+}
+
+.SwitchHorizontal input[type="checkbox"]:checked + .SwitchHorizontalSlider .SwitchHorizontalTxt
+{
+	padding: 0 30px 0 10px;
+}
+
+/*     Input & Select & Textarea     */
+.Ipt , .Sel , .Textarea
+{
+	border: 1px solid #CCCCCC;
+	background: white;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	border-radius: 2px;
+	display: inline-block;
+}
+
+.Ipt , .Sel
+{
+	vertical-align: middle;
+}
+
+/*     Input     */
+.Ipt input[type="number"] ,
+.Ipt input[type="text"] ,
+.Ipt input[type="password"]
+{
+	min-width: 300px;
+	font-size: 15px;
+	padding: 5px 0 5px 5px;
+}
+
+.Ipt input[name="sStartTime"] ,
+.Ipt input[name="sEndTime"] ,
+.Ipt input[name="sShowStartTime"] ,
+.Ipt input[name="sShowEndTime"]
+{
+	min-width: 150px;
+}
+
+/*     Select     */
+.Sel select
+{
+	min-width: 80px;
+	font-size: 15px;
+	padding: 5px 0 5px 5px;
+}
+
+/*     Textarea     */
+.Textarea
+{
+	vertical-align: top;
+}
+
+.Textarea Textarea
+{
+	min-width: 150px;
+	min-height: 60px;
+	font-size: 15px;
+	padding: 5px 0 5px 5px;
+}
+
+/*     Radio     */
+.IptRadio
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.IptRadio:not(:last-child)
+{
+	margin: 0 15px 0 0;
+}
+
+.IptRadio input[type="radio"]
+{
+	margin: 0;
+}
+
+/*     Checkbox     */
+.IptCheckbox
+{
+	display: inline-block;
+	vertical-align: middle;
+	margin: -4px 0 0 0;
+}
+
+.IptCheckbox:not(:last-child)
+{
+	margin: 0 15px 0 0;
+}
+
+.IptCheckbox input[type="checkbox"]
+{
+	margin: 0;
+	width: 16px;
+	height: 16px;
+}
+
+.IptCheckbox span , .IptCheckbox input[type="checkbox"]
+{
+	vertical-align: middle;
+}
+
+/*     箭頭     */
+.AfterArrow
+{
+	border-top: 2px solid white;
+	border-right: 2px solid white;	
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+}
+
+.AfterArrow.right
+{
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
+/*     按鈕     */
+.TableBtn , .TableBtnIcon ,
+.TableBtnFont , .TableBtnBg
+{
+	border-radius: 3px;
+	padding: 3px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.TableBtn , .TableBtnFont
+{
+	font-size: 16px;
+}
+
+.TableBtn , .TableBtn.blue ,
+.TableBtnFont , .TableBtnFont.blue
+{
+	color: #004ec4;
+}
+
+.TableBtn.red , .TableBtnFont.red
+{
+	color: #db1d1d;
+}
+
+.TableBtnIcon , .TableBtnBg
+{
+	font-size: 15px;
+	min-width: 20px;
+	min-height: 16px;
+}
+
+.TableBtnIcon , .TableBtnIcon.blue ,
+.TableBtnBg , .TableBtnBg.blue
+{
+	background: #004ec4;
+	color: white;
+}
+
+.TableBtnIcon.red , .TableBtnBg.red
+{
+	background: #db1d1d;
+	color: white;
+}
+
+.TableBtnIcon:hover , .TableBtnBg:hover
+{
+	opacity: 0.8;
+}
+
+.TableBtn:not(:last-child) ,
+.TableBtnFont:not(:last-child) ,
+.TableBtnBg:not(:last-child)
+{
+	margin-right: 8px;
+}
+
+.TableBtn:hover , .TableBtnFont:hover
+{
+	text-decoration: underline;
+}
+
+/*     新增按鈕     */
+.BtnAdd
+{
+	background: #FFE4BD;
+	color: black;
+	border-radius: 5px;
+	padding: 5px 15px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+.BtnAdd:hover
+{
+	background: #fcdbad;
+}
+
+/*     分類按鈕     */
+.BtnKind
+{
+	background: linear-gradient(to bottom, #f2f2f2 0%,#c5c5c5 100%);
+	border: 1px solid #BCBCBC;
+	padding: 3px 6px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.BtnKind:not(:last-child)
+{
+	margin: 0 5px 0 0;
+}
+
+.BtnKind.active
+{
+	background: #7B73F2;
+	color: white;
+}
+
+/*     隨便按鈕     */
+.BtnAny , .BtnAny2
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);;
+	color: white;
+	text-align: center;
+	padding: 3px 6px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	font-size: 16px;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+
+.BtnAny2
+{
+	background: linear-gradient(to right, #EB4545 0%,#530a01 100%);
+}
+
+.BtnAny input[type="submit"]
+{
+	padding: 6px;
+	font-size: 15px;
+}
+
+.BtnAny:hover
+{
+	opacity: 0.9;
+}
+
+/*****     登入頁     *****/
+.loginBox
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 100%;
+	height: 100vh;
+}
+
+.loginContainer
+{
+	/* background: #F2F2F2; */
+	height: 100vh;
+	width: 900px;
+	margin: 0 calc(50% - 450px);
+	text-align: center;
+	position: relative;
+}
+
+.loginInner
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.loginWebName
+{
+	color: #434343;
+	font-size: 30px;
+	font-weight: 600;
+	margin: 0 0 80px 0;
+}
+
+.loginTable
+{
+	width: 200px;
+	border-spacing: 0 20px;
+	margin: 0 0 20px 0;
+}
+
+.loginCellIcon
+{
+	color: #434343;
+	font-size: 24px;
+	min-width: 50px;
+	text-align: center;
+}
+
+.loginCellWrite
+{
+	width: calc(100% - 50px);
+}
+
+.loginCellWrite .Ipt
+{
+	width: 100%;
+}
+
+.loginRem
+{
+	color: #434343;
+	width: 100%;
+	margin: 0 0 40px 0;
+}
+
+.loginRem input , .loginRem span
+{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.loginRem input
+{
+	width: 21px;
+	height: 21px;
+}
+
+.loginRem span
+{
+	font-size: 18px;
+}
+
+.loginBtn
+{
+	background: linear-gradient(to right, #EA76AC 0%,#7B73F2 100%);
+	color: white;
+	border-radius: 999rem;
+	box-sizing: border-box;
+	width: 100%;
+	display: block;
+	padding: 8px 0 !important;
+	font-size: 16px;
+}
+
+/*****     Header     *****/
+header
+{
+	background: #EA76AC;
+	width: calc(100% - 250px);
+	margin: 0 0 0 250px;
+	transition: all 0.3s ease-in-out;
+}
+
+header.active
+{
+	width: 100%;
+	margin: 0;
+}
+
+.headerContainer
+{
+	width: 100%;
+	text-align: right;
+	padding: 10px 0;
+	position: relative;
+}
+
+.headerContainer > div
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.headerBtnNav
+{
+	color: white;
+	margin: 0 10px 0 0;
+	cursor: pointer;
+	position: absolute;
+	font-size: 30px;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+}
+
+.headerPageTit
+{
+	color: white;
+	position: absolute;
+	font-size: 24px;
+	top: 50%;
+	left: 60px;
+	transform: translateY(-50%);
+}
+
+.headerCircle
+{
+	background: #4D4D4D;
+	color: white;
+	margin: 0 10px 0 0;
+	border-radius: 999rem;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.headerCircle .fa-volume-up
+{
+	display: none;
+}
+
+.headerCircle .fa-volume-mute
+{
+	display: inline-block;
+}
+
+.headerCircle.active .fa-volume-up
+{
+	display: inline-block;
+}
+
+.headerCircle.active .fa-volume-mute
+{
+	display: none;
+}
+
+.headerSwitch
+{
+	margin: 0 10px 0 0;
+}
+
+.headerInf
+{
+	background: #7B73F2;
+	color: white;
+	cursor: pointer;
+	position: relative;
+	border-radius: 5px 0 0 5px;
+	font-size: 16px;
+}
+
+.headerInf.active
+{
+	border-radius: 5px 0 0 0;
+}
+
+.headerInfName
+{
+	padding: 5px 10px;
+	border-radius: 5px 0 0 0;
+}
+
+.headerInfName i
+{
+	text-align: left;
+	width: 20px;
+	font-size: 18px;
+}
+
+.headerInfMenu
+{
+	background: #7B73F2;
+	width: 100%;
+	text-align: left;
+	position: absolute;
+	opacity: 0;
+	z-index: -2;
+	transition: all 0.2s ease-in-out;
+	border-radius: 0 0 0 5px;
+}
+
+.headerInf.active .headerInfMenu
+{
+	opacity: 1;
+	z-index: 1;
+}
+
+.headerInfMenuList
+{
+	width: 100%;
+}
+
+.headerInfMenuList a
+{
+	color: white;
+	border-top: 1px solid #4D4D4D;
+	display: block;
+	padding: 5px 0 5px 38px;
+	width: calc(100% - 38px);
+}
+
+.headerInfMenuList a:last-child
+{
+	border-radius: 0 0 0 5px;
+}
+
+.headerInfMenuList a:hover
+{
+	background: #7068e0;
+}
+
+/*****     Nav     *****/
+nav
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 250px;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	transition: all 0.3s ease-in-out;
+	overflow-y: scroll;
+}
+
+nav::-webkit-scrollbar
+{
+	display: none;
+}
+
+nav.active
+{
+	left: -250px;
+	z-index: -1;
+}
+
+.navContainer
+{
+	width: 100%;
+}
+
+.navWebName
+{
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+}
+
+.navWebName > div
+{
+	width: 100%;
+	padding: 15px 0;
+}
+
+.navWebName a
+{
+	color: #434343;
+}
+
+.navMenu
+{
+	width: 100%;
+}
+
+.navMenuBlock
+{
+	width: 100%;
+	cursor: pointer;
+}
+
+.navMenuTopic
+{
+	position: relative;
+	width: calc(100% - 40px);
+	padding: 10px 20px;
+	font-size: 18px;
+}
+
+.navMenuTopic:hover
+{
+	background: #fc88be;
+}
+
+.navMenuTopic.active
+{
+	background: #fc88be;
+}
+
+.navMenuTopic i , .navMenuTopicName , .navMenuTopic .AfterArrow
+{
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.navMenuTopic i
+{
+	color: #434343;
+	font-size: 20px;
+}
+
+.navMenuTopicName
+{
+	color: #434343;
+	width: calc(100% - 55px);
+}
+
+.navMenuTopic.active .navMenuTopic i , .navMenuTopic.active .navMenuTopicName
+{
+	color: #434343;
+}
+
+.navMenuTopic .AfterArrow
+{
+	border-top: 2px solid #434343;
+    	border-right: 2px solid #434343;
+	position: absolute;
+	top: calc(50% + 1px);
+	transform: translateY(-50%) rotate(45deg);
+	-webkit-transform: translateY(-50%) rotate(45deg);
+	right: 20px;
+}
+
+.navMenuTopic.active .AfterArrow
+{
+	transform: translateY(-50%) rotate(135deg);
+	-webkit-transform: translateY(-50%) rotate(135deg);
+}
+
+.navMenuListBox
+{
+	background: #ffa4cf;
+	width: 100%;
+	display: none;
+}
+
+.navMenuTopic.active +.navMenuListBox
+{
+	display: block;
+}
+
+.navMenuList
+{
+	font-size: 16px;
+	width: calc(100% - 40px);
+	padding: 0 0 0 40px;
+	text-align: left;
+}
+
+.navMenuList:hover
+{
+	background: rgba(255,255,255,0.3);
+}
+
+.navMenuList.active
+{
+	background: #fc87be;
+}
+
+.navMenuListName
+{
+	color: #434343;
+	display: block;
+	width: calc(100% - 40px);
+	padding: 10px 20px;
+}
+
+.navMenuTopic.active + .navMenuListBox .navMenuListName
+{
+	color: #434343;
+}
+
+.navMenuList.active .navMenuListName
+{
+	color: white !important;
+}
+
+/*****     聊天室     *****/
+.chatUserBox , .chatMsgBox , .chatCanBox
+{
+	float: left;
+}
+
+.chatTopic
+{
+	width: 100%;
+	font-weight: 600;
+	margin: 0 0 10px 0;
+}
+
+.chatUserBox
+{
+	width: 220px;
+	overflow-y: scroll;
+}
+
+.chatUserBox::-webkit-scrollbar ,
+.chatMsgInner::-webkit-scrollbar ,
+.chatCanBox::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: transparent;
+}
+
+.chatUserBox::-webkit-scrollbar-thumb ,
+.chatMsgInner::-webkit-scrollbar-thumb ,
+.chatCanBox::-webkit-scrollbar-thumb
+{
+	background: #4d4d4d;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);	
+}
+
+.chatUserScroll
+{
+	width: 100%;
+	height: calc(100vh - 162px);
+}
+
+.chatUser
+{
+	width: calc(100% - 10px);
+	padding: 5px;
+	cursor: pointer;
+}
+
+.chatUser:not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+.chatUser:hover
+{
+	opacity: 0.9;
+}
+
+.chatUser.active
+{
+	color: white;
+	background: rgba(0,0,0,0.5);
+}
+
+.chatMsgBox
+{
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+	width: calc(100% - 480px);
+	margin: 0 20px;
+	border-radius: 10px;
+	display: none;
+}
+
+.chatMsgBox.active
+{
+	display: block;
+}
+
+.chatMsgUptBox
+{
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+	width: 100%;
+	border-radius: 10px;
+}
+
+.chatMsgContainer
+{
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	padding: 0 0 10px 0;
+}
+
+.chatMsgTop
+{
+	background: #28264b;
+	width: 100%;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+}
+
+.chatMsgInner
+{
+	width: 100%;
+	overflow-y: scroll;
+	margin: 10px 0 0 0;
+}
+
+.chatMsgScroll
+{
+	width: 100%;
+	height: calc(100vh - 278px);
+}
+
+.chatMsgUser
+{
+	color: white;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.serviceList
+{
+	width: 80%;
+}
+
+.serviceList:not(:last-child)
+{
+	margin-bottom: 15px;
+}
+
+.serviceList.AdmMsg
+{
+	margin-left: 20%;
+}
+
+.serviceListInf
+{
+	width: 100%;
+}
+
+.serviceList.UserMsg .serviceListInf
+{
+	padding: 0 0 0 12px;
+}
+
+.serviceList.AdmMsg .serviceListInf
+{
+	padding: 0 12px 0 0;
+}
+
+.serviceListName
+{
+	font-size: 12px;
+	margin: 0 0 5px 0;
+}
+
+.serviceListNameTxt
+{
+	color: #081836;
+}
+
+.serviceList.AdmMsg .serviceListNameTxt
+{
+	text-align: right;
+}
+
+.serviceListBot
+{
+	width: 100%;
+}
+
+.serviceList.UserMsg .serviceListBot
+{
+	text-align: left;
+}
+
+.serviceList.AdmMsg .serviceListBot
+{
+	text-align: right;
+}
+
+.serviceListMsgBox , .serviceListTime
+{
+	display: inline-block;
+	vertical-align: bottom;
+}
+
+.serviceListMsgBox
+{
+	filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+	max-width: calc(100% - 80px);
+	padding: 4px 8px;
+	border-radius: 5px;
+	position: relative;
+	min-height: 16px;
+}
+
+.serviceList.UserMsg .serviceListMsgBox
+{
+	background: #E8E8E8;
+	margin: 0 5px 0 0;
+}
+
+.serviceList.AdmMsg .serviceListMsgBox
+{
+	background: #8c57e2;
+	margin: 0 0 0 5px;
+}
+
+.serviceListMsgBox::after
+{
+	width: 0;
+	height: 0;
+	content: '';
+	position: absolute;	
+	border-style: solid;
+	z-index: 2;
+	top: 7px;
+}
+
+.serviceList.UserMsg .serviceListMsgBox::after
+{
+	border-color: transparent #E8E8E8 transparent transparent;
+	border-width: 5px 8px 5px 0;	
+	left: -6px;
+}
+
+.serviceList.AdmMsg .serviceListMsgBox::after
+{
+	border-color: transparent transparent transparent #7B73F2;
+	border-width: 5px 0 5px 8px;
+	right: -6px;
+}
+
+.serviceListMsg
+{
+	font-size: 15px;
+	word-break: break-all;
+}
+
+.serviceList.service .serviceListMsg
+{
+	color: #333333;
+}
+
+.serviceList.AdmMsg .serviceListMsg
+{
+	color: white;
+}
+
+.serviceListTime
+{
+	width: 120px;
+	height: 16px;
+	position: relative;
+}
+
+.serviceListTimeTxt
+{
+	color: #bbbbbb;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	font-size: 12px;
+}
+
+.chatMsgSend
+{
+	background: #d6d6d6;
+	border-radius: 0 0 10px 10px;
+	padding: 10px;
+	width: calc(100% - 20px);
+}
+
+.chatMsgSendMsg
+{
+	padding: 0 10px 0 0;
+}
+
+.chatMsgSend .Textarea , .chatMsgSend .Textarea textarea
+{
+	width: 100%;
+}
+
+.chatMsgSend .BtnAny
+{
+	width: 60px;	
+}
+
+.chatCanBox
+{
+	width: 220px;
+	position: relative;
+	overflow-y: scroll;
+}
+
+.chatCanScroll
+{
+	width: 100%;
+	height: calc(100vh - 162px);
+}
+
+.chatCanBlock
+{
+	background: rgba(0,0,0,0.1);
+	width: 100%;
+	cursor: pointer;
+}
+
+.chatCanBlock:not(:last-child)
+{
+	margin: 0 0 10px 0;
+}
+
+.chatCanSort
+{
+	width: calc(100% - 10px);
+	padding: 5px;
+}
+
+.chatCanSort:hover
+{
+	background: rgba(0,0,0,0.2);
+}
+
+.chatCanListBox
+{
+	width: 100%;
+	display: none;
+}
+
+.chatCanSort.active +.chatCanListBox
+{
+	display: block;
+}
+
+.chatCanList
+{
+	background: rgba(0,0,0,0.2);
+	color: white;
+	font-size: 15px;
+	width: calc(100% - 10px);
+	padding: 5px;
+}
+
+.chatCanList:not(:last-child)
+{
+	border-bottom: rgba(0,0,0,0.3);
+}
+
+.chatCanList:hover
+{
+	background: rgba(0,0,0,0.4);
+}
+
+.chatCanListBox
+{
+	width: 100%;
+}
+
+.chatCanBox::after
+{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	clear: both;
+}
+
+/*     會員層級     */
+.familyBox
+{
+	width: 100%;
+	border-spacing: 20px;
+	/* animation: familyDisplay 0.5s ease-in-out; */
+}
+
+@keyframes familyDisplay
+{
+	from
+	{
+		transform: scale(0);
+	}
+
+	to
+	{
+		transform: scale(1);
+	}
+}
+
+.familyTable:not(:last-child)
+{
+	margin: 0 0 -20px 0;
+}
+
+.familOneBox
+{
+	width: 100%;
+	margin: 0 0 10px 0;
+}
+
+.familOne
+{
+	display: block;
+	width: 200px;
+	position: relative;
+}
+
+.familOne:not(:last-child)
+{
+	margin: 0 0 30px 0;
+}
+
+.familyTable
+{
+	position: relative;
+}
+
+.familOne:not(:first-child)::after , .familyTable::after
+{
+	border-left: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+	position: absolute;
+	content: '';
+	display: block;
+	left: -28px;
+	border-radius: 0 0 0 5px;
+	width: 55px;
+	height: 55px;
+}
+
+.familOne:not(:first-child)::after 
+{
+	left: -55px;
+	top: -30px;
+}
+
+.familyTable::after
+{
+	left: -35px;
+	top: -10px;
+}
+
+.familBlock
+{
+	color: black;
+	border: 1px solid #808080;
+	border-radius: 5px;
+	padding: 5px;	
+	vertical-align: top !important;
+	cursor: pointer;		
+	font-size: 14px;
+	transition: all 0.1s ease-in-out;
+}
+
+.familBlockInner
+{
+	width: calc(100% - 10px);	
+}
+
+.familBlock:hover
+{
+	background: rgba(0,0,0,0.1);
+}
+
+.familBlockLine
+{
+	width: 100%;
+}
+
+.familBlockLine:not(:last-child)
+{
+	margin: 0 0 5px 0;
+}
+
+.familBlockLineTit , .familBlockLineTxt
+{
+	display: inline-block;
+	word-break: break-all;
+}
+
+/*****派派*****/
+.EmojiImgIcon /* 編輯器 content.css也有加 */
+{
+	width: 20px !important;
+	padding: 2px 0;
+	display: inline-block !important;
+}

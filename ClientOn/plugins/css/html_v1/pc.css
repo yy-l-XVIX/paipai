@@ -1,0 +1,184 @@
+*
+{
+	font-family: 微軟正黑體;
+}
+
+html , body
+{
+	font-family: 微軟正黑體;
+	width: 100%;
+	margin: 0;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+body
+{
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+	margin: 0 auto;
+	position: relative;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+img
+{
+	display: block;
+}
+
+button , select , input[type="radio"] , input[type="checkbox"] ,
+input[type="submit"] , label , a
+{
+	cursor: pointer;
+}
+
+input , button , select , textarea
+{
+	background: transparent;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+textarea
+{
+	padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+button , input[type="button"]
+{
+	-webkit-appearance: none !important;
+	-moz-appearance:none !important;
+	appearance: none !important;
+}
+
+input[type="number"]
+{
+	-moz-appearance:textfield;
+}
+
+input::placeholder
+{
+	font-size: 16px;
+}
+
+table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+/*     共同     */
+.BG
+{
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.Table
+{
+	display: table;
+}
+
+.Table > div
+{
+	display: table-row-group;
+	width: 100%;
+}
+
+.Table > div > div
+{
+	display: table-row;
+	width: 100%;
+}
+
+.Table > div > div > div ,
+.Table > div > div > a
+{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.Notice
+{
+	color: red;
+	display: none;
+	font-size: 13px;
+	text-align: left;
+}
+
+.Notice.active
+{
+	display: block;
+}
+
+.NoData /* 沒有資料 */
+{
+	text-align: center;
+	font-size: 15px;
+}
+
+.PosLeft /* position: left; */
+{
+	left: 0;
+}
+
+.PosRight /* position: right; */
+{
+	right: 0;
+}
+
+.FontGradient
+{
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+body , header , footer
+{
+	width: 50%;	
+}
+
+header , footer
+{
+	left: 25%;
+}
+
+.WindowContainer
+{
+	width: 40%;
+}
+
+.WindowContent
+{
+	min-height: 40vh;
+}
+
+.accessLogo
+{
+	width: 30%;
+}
+
+.myjobIptBox
+{
+	width: calc(50% - 30px);
+}
+
+.JobListBtnView , .LikeIconImg , .discussArticleBtnView ,
+.discussArticleBtnMore , .FileBtnAdd , .infVideoBox , .EmojiImg
+{
+	cursor: pointer;
+}
+
+.infVideoWindowBox video
+{
+	max-width: unset;
+	width: 50%;
+	margin: 0 25%;
+}

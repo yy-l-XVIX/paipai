@@ -1,0 +1,202 @@
+*
+{
+	font-family: 微軟正黑體;
+}
+
+html , body
+{
+	font-family: 微軟正黑體;
+   	margin: 0;
+   	min-height: 100vh;
+	width: 100%;	
+}
+
+html
+{
+    	-webkit-backface-visibility: hidden;
+    	/* -webkit-transform: translate3d(0,0,0); */
+}
+
+body
+{
+    	-webkit-overflow-scrolling:touch;
+	-ms-overflow-style: none;
+	position: relative;
+	overflow-x: hidden;
+}
+
+a
+{
+    	text-decoration: none;
+}
+
+img
+{
+	display: block;
+}
+
+input , button , select , textarea
+{
+	background: transparent;
+	outline: none;
+	border: none;
+	box-sizing: border-box;
+}
+
+input[type="submit"] , button
+{
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+input[type="file"]
+{
+	font-size: 13px;
+}
+
+textarea
+{
+	padding: 0;
+}
+
+form
+{
+    	margin-block-end: 0; 
+}
+
+/*****     共同框架     *****/
+.ContentContainer
+{
+	width: calc(100% - 20px);
+	margin: 0;
+	padding: 30px 10px 50px 10px;
+}
+
+/*     Input     */
+.Ipt input[type="number"] ,
+.Ipt input[type="text"] ,
+.Ipt input[type="password"]
+{
+	font-size: 14px;
+}
+
+/*     Select     */
+.Sel select
+{
+	font-size: 14px;
+}
+
+/*     Textarea     */
+.Textarea Textarea
+{
+	font-size: 14px;
+}
+
+/*     搜尋     */
+.Search .Ipt , .Search .Sel
+{
+	margin-bottom: 5px;
+}
+
+/*     純顯示資訊表格     */
+.Information
+{
+	font-size: 14px;
+}
+
+/*     區塊元素     */
+.BlockLineTit , .BlockLineTxt
+{
+	font-size: 14px;
+}
+
+/*     編輯頁面     */
+.EditBtn
+{
+	font-size: 15px;
+	padding: 3px 8px;
+}
+
+.EditBtn:not(:last-child)
+{
+	margin: 0 5px 0 0;
+}
+
+/*     分類按鈕     */
+.BtnSort
+{
+	font-size: 14px;
+}
+
+/*****     登入頁     *****/
+.loginBox
+{
+	width: 100%;
+	height: 100vh;
+}
+
+.loginContainer
+{
+	/* background: #F2F2F2; */
+	min-height: 100vh;
+	width: calc(100% - 30px);
+	margin: 0 15px;
+}
+
+/*****     Header     *****/
+header
+{
+	width: 100%;
+	margin: 0;
+}
+
+header.active .headerBtnNav
+{
+	background: #5f5f5f;
+	position: fixed;
+	left: 250px;
+	top: 5px;
+	transform: unset;
+	z-index: 11;
+	padding: 5px 10px;
+	border-radius: 0 5px 5px 0;
+	transition: all 0.3s ease-in-out;
+}
+
+.headerPageTit
+{
+	font-size: 16px;
+}
+
+/*****     Nav     *****/
+nav
+{
+	background: rgba(0,0,0,0.8);
+	width: 0;
+	height: 100vh;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	left: -250px;
+	transition: all 0.3s ease-in-out;
+}
+
+nav.active
+{
+	width: 100%;
+	left: 0;
+	z-index: 10;
+}
+
+.navContainer
+{
+	background: linear-gradient(to bottom, #FCBCDA 0%,#D7D5F6 100%);
+	width: 250px;
+}
+
+/*****     共同框架     *****/
+/*     純顯示資訊表格     */
+.InformationTableBox table
+{
+	table-layout: auto;
+}

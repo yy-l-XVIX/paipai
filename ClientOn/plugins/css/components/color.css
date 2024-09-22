@@ -1,0 +1,201 @@
+/*     文字顏色     */
+.FontWhite
+{
+	color: white;
+}
+
+.FontWhiteImp
+{
+	color: white !important;
+}
+
+.FontBlack
+{
+	color: black;
+}
+
+.FontBlackImp
+{
+	color: black !important;
+}
+
+.FontGreen
+{
+	color: #007544;
+}
+
+.FontGreenImp
+{
+	color: #007544 !important;
+}
+
+.FontBlue
+{
+	color: #002980;
+}
+
+.FontBlueImp
+{
+	color: #002980 !important;
+}
+
+.FontRed
+{
+	color: #EB4545;
+}
+
+.FontRedImp
+{
+	color: #EB4545 !important;
+}
+
+.FontOrange
+{
+	color: #db821d;
+}
+
+.FontOrangeImp
+{
+	color: #db821d !important;
+}
+
+.FontYellow
+{
+	color: #f8e645;
+}
+
+.FontYellowImp
+{
+	color: #f8e645 !important;
+}
+
+.FontPurple
+{
+	color: #9c36f0;
+}
+
+.FontPurpleImp
+{
+	color: #9c36f0 !important;
+}
+
+.FontPink
+{
+	color: pink;
+}
+
+.FontPinkImp
+{
+	color: pink !important;
+}
+
+.FontGray
+{
+	color: gray;
+}
+
+.FontGrayImp
+{
+	color: gray !important;
+}
+
+/*     背景顏色     */
+.BgWhite
+{
+	background: white;
+}
+
+.BgWhiteImp
+{
+	background: white !important;
+}
+
+.BgBlack
+{
+	background: black;
+}
+
+.BgBlackImp
+{
+	background: black !important;
+}
+
+.BgGreen
+{
+	background: teal;
+}
+
+.BgGreenImp
+{
+	background: teal !important;
+}
+
+.BgBlue
+{
+	background: #005780;
+}
+
+.BgBlueImp
+{
+	background: #005780 !important;
+}
+
+.BgRed
+{
+	background: #db1d1d;
+}
+
+.BgRedImp
+{
+	background: #db1d1d !important;
+}
+
+.BgOrange
+{
+	background: #db821d;
+}
+
+.BgOrangeImp
+{
+	background: #db821d !important;
+}
+
+.BgYellow
+{
+	background: #f8e645;
+}
+
+.BgYellowImp
+{
+	background: #f8e645 !important;
+}
+
+.BgPurple
+{
+	background: #9c36f0;
+}
+
+.BgPurpleImp
+{
+	background: #9c36f0 !important;
+}
+
+.BgPink
+{
+	background: pink;
+}
+
+.BgPinkImp
+{
+	background: pink !important;
+}
+
+.BgGray
+{
+	background: gray;
+}
+
+.BgGrayImp
+{
+	background: gray !important;
+}
